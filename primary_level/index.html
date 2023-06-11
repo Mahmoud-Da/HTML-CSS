@@ -1,0 +1,154 @@
+<!--<h1> abcde <／h1>
+  <h1>「タグ」と呼ばれる印、<hi>開始タグと<／h1>終了タグ(「/」が必要) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 見出し(heading)をつける -->
+    <h1>I'm Lyly</h1>
+    <h2>I'm Lyly</h2>
+    <h3>I'm Lyly</h3>
+    <h4>I'm Lyly</h4>
+    <h5>I'm Lyly</h5>
+    <h6>I'm Lyly</h6>
+
+    <h1>プログラミングの世界へようこそ</h1>
+    <h2>Progateとは</h2>
+
+    <!-- 段落(paragraph)を作成する -->
+    <p>This year 34 old.</p>
+    <p>オンラインのプログラミング学習サービスです</p>
+
+    <!-- リンクを作成する -->
+    <!-- テキストを<a>タグで囲むことで、簡単にリンクを作ることができます。
+    実際に表示されるテキストは、<a>タグに囲まれた部分です。 -->
+    <!-- <a href="url">というように書き、url部分にリンク先のURLを指定することで、そのページへのリンクを作ることができます。 -->
+    <a>Progate</a>
+    <a href="https://prog-8.com">Progateへ</a>
+    <a href="https://google.com">Googleへ</a>
+
+    <!-- 画像を表示する -->
+    <!-- 画像の表示には<img>要素を用います。
+    <img src="url">のように、src属性のurlの部分に画像のリンクを指定することで、画像が表示されます。 -->
+    <!-- <img>要素はテキストを囲むことがないため、終了タグが要りません。 -->
+    <img src="https://prog-8.com/images/html/beginner/wanko.jpg" />
+    <img src="https://prog-8.com/images/html/beginner/school.jpg" />
+
+    <!-- リストを作成する -->
+    <!-- <li>要素は、囲む要素によって種類が変わるという特徴を持っています。
+    <ul>要素で囲むと、黒点が先頭につきます。
+    <ol>要素で囲むと、数字が連番でつきます -->
+    <ul>
+      <li>HTML</li>
+      <li>PHP</li>
+      <li>Ruby</li>
+    </ul>
+    <ol>
+      <li>HTML</li>
+      <li>PHP</li>
+      <li>Ruby</li>
+    </ol>
+
+    <!-- CSSとは、HTMLの要素に対して色、大きさ、
+   配置などを指定し、ページをデザインするための言語です。 -->
+    <!-- CSSは、HTMLとは別のファイルに記述します。 -->
+
+    <!-- 文字の色を変えるcolorプロパティ -->
+    <!-- 「color: #ff0000;」のように、16進数のカラーコードで色を指定します -->
+    <!-- h1 {
+      /* #ff0000":カラーコード */ =>コメント
+      color: #ff0000;
+    }
+    p {
+      color: #0000ff;
+    } -->
+
+    <!-- 文字の大きさを指定するにはfont-sizeプロパティを用います。
+  font-sizeは、px(ピクセル)という単位を用いて指定します。 -->
+    <!-- h1 {
+      color: #ff0000;
+      font-size: 10px;
+    }
+    p {
+      color: #0000ff;
+      font-size: 40px;
+    } -->
+
+    <!-- 文字の種類を変える
+  font-familyプロパティを用いると、フォントの種類を指定することができます。
+   -->
+    <!-- h1 {
+      font-family: serif;
+    }
+    p {
+      font-family: "Avenir Next";  => space があるとき、「"」が必要です。
+    } -->
+
+    <!-- 背景色を変えるbackground-colorプロパティ
+  「#dddddd」のように同じ値が続く場合は、「#ddd」と省略できます。-->
+    <!-- h1 {
+      background-color:#dddddd;
+    }
+    p {
+      background-color:#ffd800;
+    } -->
+
+    <!-- 横幅、高さを変えるwidthプロパティ、heightプロパティ
+  px(ピクセル)という単位を用いて指定します。-->
+    <!-- h1 {
+      width;500px;
+      height:80px;
+      background-color:#9de8ea;
+    }
+    img {
+      width;500px;
+      height:80px;
+    } -->
+
+    <!-- タグに名前をつける
+  class名でCSSを指定する場合、先頭にドット「.」が必要な点に注意-->
+    <ul>
+      <li class="selected">HTML</li>
+      <li>PHP</li>
+      <li>Ruby</li>
+    </ul>
+    <!-- .selected{
+      color: red;
+    } -->
+    <!-- classに同じCSSを適用する-->
+    <ul>
+      <li class="selected">HTML</li>
+      <li class="selected">PHP</li>
+      <li>Ruby</li>
+    </ul>
+    <!-- .selected{
+      color: red;
+    } -->
+    <!-- classの場合はドットが必要で、タグの場合は必要ない -->
+
+    <!-- <html>要素の中に<head>要素と<body>要素が必要です。
+<head>要素にはページに関する情報、<body>要素には実際に表示したい内容を書きます。
+<!DOCTYPE html>の部分はDOCTYPE宣言と呼ばれるもので、HTMLのバージョンを宣言するためのものです。
+最新バージョンのHTMLを使うため、<!DOCTYPE html>
+<head>要素にはWebページの設定に関する情報を書いていきます。
+<head>要素内に記述した内容はWebページには表示されません。-->
+    <!-- <head>要素の中では
+    ①文字コードの指定、<meta.....>
+      文字コードを指定することで、ページの文字化けを防ぐことができます。「""」の中は文字コードです。
+    ②ページのタイトルの設定、<title>.........</title>
+      要素で指定されたタイトルは、ブラウザのタブ上に現れます。
+    ③CSSの読み込みなど <link ...........>
+      HTMLからCSSを読み込むためには、<link rel="stylesheet">を用います。
+      <link rel="stylesheet" href="stylesheet.css">のように、href属性で読み込むCSSファイルを指定します。
+    を行っていきます。
+  -->
+    <!-- レイアウトはWebサイトを作る上で最も重要な部分であるといっても過言ではありません。 -->
+    <!-- <div>要素 の「div」は「division」の略で、要素をグループ化するために使用されます。 -->
+    <!-- タグ名を入力し、「Tab」キーを押すと終了タグまで補完をしてくれます。 -->
+  </body>
+</html>

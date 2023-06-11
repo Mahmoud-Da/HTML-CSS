@@ -54,62 +54,6 @@
       <li>Ruby</li>
     </ol>
 
-    <!-- CSSとは、HTMLの要素に対して色、大きさ、
-   配置などを指定し、ページをデザインするための言語です。 -->
-    <!-- CSSは、HTMLとは別のファイルに記述します。 -->
-
-    <!-- 文字の色を変えるcolorプロパティ -->
-    <!-- 「color: #ff0000;」のように、16進数のカラーコードで色を指定します -->
-    <!-- h1 {
-      /* #ff0000":カラーコード */ =>コメント
-      color: #ff0000;
-    }
-    p {
-      color: #0000ff;
-    } -->
-
-    <!-- 文字の大きさを指定するにはfont-sizeプロパティを用います。
-  font-sizeは、px(ピクセル)という単位を用いて指定します。 -->
-    <!-- h1 {
-      color: #ff0000;
-      font-size: 10px;
-    }
-    p {
-      color: #0000ff;
-      font-size: 40px;
-    } -->
-
-    <!-- 文字の種類を変える
-  font-familyプロパティを用いると、フォントの種類を指定することができます。
-   -->
-    <!-- h1 {
-      font-family: serif;
-    }
-    p {
-      font-family: "Avenir Next";  => space があるとき、「"」が必要です。
-    } -->
-
-    <!-- 背景色を変えるbackground-colorプロパティ
-  「#dddddd」のように同じ値が続く場合は、「#ddd」と省略できます。-->
-    <!-- h1 {
-      background-color:#dddddd;
-    }
-    p {
-      background-color:#ffd800;
-    } -->
-
-    <!-- 横幅、高さを変えるwidthプロパティ、heightプロパティ
-  px(ピクセル)という単位を用いて指定します。-->
-    <!-- h1 {
-      width;500px;
-      height:80px;
-      background-color:#9de8ea;
-    }
-    img {
-      width;500px;
-      height:80px;
-    } -->
-
     <!-- タグに名前をつける
   class名でCSSを指定する場合、先頭にドット「.」が必要な点に注意-->
     <ul>
@@ -117,21 +61,15 @@
       <li>PHP</li>
       <li>Ruby</li>
     </ul>
-    <!-- .selected{
-      color: red;
-    } -->
+
     <!-- classに同じCSSを適用する-->
     <ul>
       <li class="selected">HTML</li>
       <li class="selected">PHP</li>
       <li>Ruby</li>
     </ul>
-    <!-- .selected{
-      color: red;
-    } -->
-    <!-- classの場合はドットが必要で、タグの場合は必要ない -->
 
-    <!-- <html>要素の中に<head>要素と<body>要素が必要です。
+<!-- <html>要素の中に<head>要素と<body>要素が必要です。
 <head>要素にはページに関する情報、<body>要素には実際に表示したい内容を書きます。
 <!DOCTYPE html>の部分はDOCTYPE宣言と呼ばれるもので、HTMLのバージョンを宣言するためのものです。
 最新バージョンのHTMLを使うため、<!DOCTYPE html>
@@ -150,5 +88,53 @@
     <!-- レイアウトはWebサイトを作る上で最も重要な部分であるといっても過言ではありません。 -->
     <!-- <div>要素 の「div」は「division」の略で、要素をグループ化するために使用されます。 -->
     <!-- タグ名を入力し、「Tab」キーを押すと終了タグまで補完をしてくれます。 -->
+
+<!-- ヘッダーの構造
+ヘッダーには「Progate」のロゴと、ヘッダーメニューのリストがあります-->
+<div class="header">
+  <div class="header-logo">Progate</div>
+  <div class="header-list">
+    <ul>
+      <li>プログラミングとは</li>
+      <li>学べるレッスン</li>
+      <li>お問い合わせ</li>
+    </ul>
+
+<!-- ヘッダーのレイアウト
+HTMLで記述した要素は基本的に縦に並んでいくので、横並びにするにはCSSが必要です。-->
+<!-- floatプロパティを用いることで、指定した要素を横並びにすることができます。 -->
+<ul>
+  <li>HTML</li>
+  <li>PHP</li>
+  <li>Ruby</li>
+</ul>
+
+<!-- 余白の調整
+要素に余白を作りたい場合は、paddingを用います。
+「padding: 値;」とすると、上下左右すべての方向にその大きさの余白が追加されます。
+上下左右ではなく、ある方向のみに余白を指定したい場合もあります。
+その場合は、以下のように、「padding-top: 値;」などとすると、その方向のみに余白が追加されます。
+他にpadding-bottom、padding-left、padding-rightなどがあります。-->
+<div class ="logo1">
+  Progate
+</div>
+
+
+<!-- フッターを作ろう
+フッターの左側にはロゴがあり、右側にはリストがあります。
+ヘッダーを作った時に<li>要素全体にfloatとpaddingを指定しました。
+これらは、フッターの<li>要素にも適用されてしまいます。-->
+<div class="footer">
+  <div class="footer-logo">Progate</div>
+  <div class="footer-list">
+    <ul>
+      <li>会社概要</li>
+      <li>初めて</li>
+    </ul>
+  </div>
+</div>
+
+
+
   </body>
 </html>

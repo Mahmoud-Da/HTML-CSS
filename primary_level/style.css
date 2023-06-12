@@ -79,3 +79,24 @@ li {
 .logo1 {
   padding: 20px 10px; /* top + bottom right + left */
 }
+
+li {
+  float: right;
+}
+
+span {
+  color: #ff0000;
+}
+
+.logo1 {
+  border: 5px solid red;
+}
+.logo2 {
+  border-bottom: 1px solid #333;
+}
+
+.logo1 {
+  border: 3px solid #ff0000;
+  padding: 10px;
+  margin: 20px;
+}

@@ -120,10 +120,14 @@ HTMLで記述した要素は基本的に縦に並んでいくので、横並び�
 </div>
 
 
+
 <!-- フッターを作ろう
 フッターの左側にはロゴがあり、右側にはリストがあります。
 ヘッダーを作った時に<li>要素全体にfloatとpaddingを指定しました。
-これらは、フッターの<li>要素にも適用されてしまいます。-->
+これらは、フッターの<li>要素にも適用されてしまいます。
+float: leftとfloat:rightを組み合わせることで、ロゴとリスト全体を左右に配置することができます。
+左端に配置したい「footer-logo」にはfloat: left;を、
+右端に配置したい「footer-list」にはfloat: right;を指定しましょう。-->
 <div class="footer">
   <div class="footer-logo">Progate</div>
   <div class="footer-list">
@@ -133,6 +137,53 @@ HTMLで記述した要素は基本的に縦に並んでいくので、横並び�
     </ul>
   </div>
 </div>
+
+<!-- メインのレイアウト
+main要素は、
+ 「copy-container」、
+ 「contents」、
+ 「contact-form」の3つの要素で構成されています。
+-->
+<div class="copy-container">
+  <h1>
+    Hello World<span>.</span>
+  </h1>
+</div>
+<div class="contents">
+  <h3>Abc</h3>
+  <div class="content-item">
+    <p>HTML&CSS</p>
+  </div>
+</div>
+<div class="contact-form"></div>
+
+<!-- 文中の一部にCSSを適用させる. <span>要素で囲みます。-->
+<!-- ブロック要素・インライン要素
+HTMLの要素には、改行される要素と改行されない要素があります。
+前後で改行が入り、親要素の幅一杯に広がる要素をブロック要素といいます。
+これまで勉強してきた<div>要素や<h1>要素、<p>要素はブロック要素です。
+それに対して、<span>要素や<a>要素のように改行されない要素をインライン要素といいます。-->
+
+<!-- コンテンツの構造
+h3 と content-item があります。-->
+
+<!-- ボーダー（枠線）-->
+<!-- 要素にボーダー（枠線）をつけるには、borderプロパティを用います。図のように、枠線の太さ、種類、色を指定して使用します。 
+上下左右すべてに線を付けたい場合はborderとし、特定の場所にのみ付けたい場合は「border-bottom」のように、「border-方向」とします。
+他にborder-top、border-left、border-rightなどがあります。-->
+<div class ="logo1">
+  Progate
+</div>
+
+<div class="logo2">
+  Progate
+</div>
+
+<!-- paddingとmargin
+これまで余白を作るにはpaddingを使ってきましたが、paddingはborderの内側の余白を作ります。
+borderの外側に余白を作りたい場合、marginを用います。
+値の指定の方法は、paddingと同じです。
+-->
 
 
 

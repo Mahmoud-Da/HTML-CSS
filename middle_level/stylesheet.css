@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto; /*要素を中央寄せ,広い範囲を囲うようなブロック要素*/
+}
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url(https://think.kera.org/wp-content/uploads/2023/03/shutterstock_2238204845-800x500.jpg);
+  color: white;
+  background-size: cover;
+  text-align: center;
+  /*text-alignプロパティを用いることで、テキスト、インライン要素、インラインブロック要素の配置を指定することができます。
+  leftで左寄せ、centerで中央揃え、rightで右寄せに設定することができます。*/
+}
+
+.top-wrapper h1 {
+  opacity: 0.7; /* opacityプロパティを使えば要素を透明にできます。 */
+  font-size: 45px;
+  letter-spacing: 5px; /* letter-spacingプロパティを用いることで文字の間隔を指定することができます。*/
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+}
+
+.btn {
+  /* 共有のｃｓｓ */
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px; /*角を丸める*/
+}
+
+.btn:hover {
+  /* セレクタ:hoverとすることで、カーソルが乗ったときのCSSを指定することができます。 */
+  opacity: 1;
+}
+
+.signup {
+  background-color: #239b76;
+}
+
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+.twitter {
+  background-color: #55acee;
+}
+
+.btn-wrapper {
+  margin: 20px 0;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>advanced level</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <!-- メディアクエリ（Media Queries）とはブラウザの画面サイズに応じてCSSのスタイルを設定できる手法です。 -->
+    <!-- メディアクエリは、@media (条件) { .... }という様に書きます。指定された条件が当てはまるときにのみ{ }内のCSSが適用されます。 -->
+    <!-- メディアクエリの条件には、max-width(最大幅)、またはmin-width(最小幅)を指定できます。 -->
+    <!-- max-width: ◯◯pxと指定すると、画面幅が◯◯px以下の時にCSSを適用できます。min-widthはその反対となります。 -->
+    <!-- max-width: ◯◯px（またはmin-width: ◯◯px）のようにメディアクエリの条件を指定するとき、「◯◯px」の部分をブレイクポイントと呼びます。 -->
+    <!-- レスポンシブデザインを適用しないと、画面幅が小さいときにコンテンツの内容も小さくなり、見づらくなってしまいます。 -->
+    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="item">
+        <div class="item-box green"></div>
+      </div>
+      <div class="item">
+        <div class="item-box yellow"></div>
+      </div>
+      <div class="item">
+        <div class="item-box red"></div>
+      </div>
+      <div class="item">
+        <div class="item-box blue"></div>
+      </div>
+    </div>
+    <!-- itemクラスのwidthが25%で指定されているため、左右のpaddingを追加すると要素の幅の合計が100%を超えてしまい、レイアウトが崩れてしまっています。
+        このようなレイアウト崩れは、box-sizing: border-box;を用いることで防ぐことができます。 -->
+    <!-- box-sizingをborder-boxに指定すると、要素の幅(width)の合計にpaddingとborderが含まれるようになります。そのため、
+        paddingやborderを追加した時に生じるレイアウト崩れを未然に防ぐことができます（※ただし、marginはborder-boxでの合計値に含まれません）。 -->
+    <!-- box-sizing: border-box;を指定するときは、*(アスタリスク)に対して指定することが推奨されています。
+        *はすべての要素に対してCSSを適用したい場合に用います。
+        border-boxをすべての要素に対して適用することで、レイアウトを管理しやすくなります。-->
+  </body>
+</html>

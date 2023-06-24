@@ -8,6 +8,7 @@
     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
     " />
     <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="responsive.css" />
   </head>
   <body>
     <!-- <div class="header">と<div class="footer">のような、
@@ -151,5 +152,20 @@ line-heightプロパティの「高さの中心」に文字が配置されるた
         <p>Learn to Code, Learn to be Creative.</p>
       </div>
     </footer>
+    <!-- 通常、親要素の高さは子要素を包む高さとなります。
+しかし、子要素が全てfloatの時、親要素の高さは0となってしまうという性質があります。
+これは、floatは「浮いている」という意味で、親要素から見るとfloatの子要素は存在しないように見えるからです。 -->
+    <!--子要素が全てfloatでも、親要素が高さを持つように設定してみましょう。
+floatはclear: left;で「浮いている」状態を解除できます。
+ここではclear: left;を適用するためだけの空のタグを用意しましょう。
+空タグとclearでfloatを解除するのはよく使うテクニックなので、覚えておく -->
+    <!-- ブレイクポイントを670pxに設定します。
+lesson要素のwidthを100%にして縦並びになるように変更 -->
+    <!-- ボタン間のmarginも調整します -->
+    <!-- container要素のwidthが100%なので、画面幅が2000pxなどとても大きい時も画面いっぱいに広がってしまいます。
+max-width: ◯◯px;と指定すると、画面幅を拡大しても、要素の幅の上限が◯◯pxとなります。 -->
+    <!-- メニューアイコンはデフォルトでは非表示にし、画面幅が670px以下（スマートフォンサイズ）の時にのみ表示されるようにします。
+要素を非表示にするにはdisplay: none;を用います。
+非表示にした要素を表示させる時は、display: block;を用いて表示します。 -->
   </body>
 </html>

@@ -200,3 +200,11 @@ footer {
 /*z-indexプロパティは、要素の重なりの順序を指定する際に使用します。
   z-indexは整数値で指定し、値が大きいほど上に表示されます。
   z-indexプロパティは必ずpositionプロパティと併用する必要があるので、注意しましょう。 */
+
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+}

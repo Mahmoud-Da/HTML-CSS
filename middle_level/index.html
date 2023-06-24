@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Middle level</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    " />
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
     <!-- <div class="header">と<div class="footer">のような、
     ヘッダーとフッターのためのタグは非常によく使われるので、HTMLは<header>と<footer>というタグが用意されています。 -->
     <header>
+      <!-- opacityには要素の中身全てを透明にするという性質があります。
+        背景色のみを透明にするには、rgbaというものを使う必要があります。 -->
+      <!-- rgbは色の指定の仕方の1つで、3つの値の組み合わせで表示する色を決めます。
+        色を指定するときは今まで使用してきた#ffffffのような記法を使ってもrgbを使っても構いません。 -->
+      <!-- 色を透明にしたいときは色をrgbaで指定します。rgbaは4つの値をコンマ（,）区切りで入れます。4つ目の値が透明にする度合いで、0 ~ 1の数値で指定します（値が小さいほど透明になります）。 -->
+      <!-- opacityプロパティは要素全体を透過させますが、rgbaを使うとその色だけを透明にすることが出来ます。 -->
       <div class="container">
         <div class="header-left">
           <img
@@ -21,6 +30,15 @@
           <a href="#" class="login">ログイン</a>
         </div>
       </div>
+      <!-- transitionを使うとアニメーションをつけることができます。
+「変化の対象」や、「変化にかかる時間」などを指定できます。
+「変化の対象」にはcolorなどのプロパティを指定しますが、allを指定すると全てのプロパティに適用出来ます -->
+      <!-- line-heightプロパティを使うと、行の高さを指定することができます。
+ 値が大きいほど行間が大きくなります。 -->
+      <!-- line-heightプロパティは本来行間を調整するためのプロパティですが、要素の縦方向の中央に文字を配置するのにも使えます。
+line-heightプロパティの「高さの中心」に文字が配置されるため、要素の高さとline-heightプロパティを同じ値にすると、文字がちょうど中央に配置されるようになります。 -->
+      <!-- <a>タグはインライン要素なので、中身のテキストの部分しか大きさを持ちません。その結果、<a>タグをクリックできる範囲はテキストの部分だけになってしまいます。
+  <a>タグをブロック要素にすると、大きさが親要素いっぱいに広がるので、全体をクリックできるようになります。 -->
     </header>
 
     <div class="top-wrapper">
@@ -34,14 +52,22 @@
         <div class="btn-wrapper">
           <a href="#" class="btn signup">新規登録はこちら</a>
           <p>or sign up with</p>
-          <a href="#" class="btn facebook">Facebookで登録</a>
-          <a href="#" class="btn twitter">Twitterで登録</a>
+          <a href="#" class="btn facebook">
+            <span class="fa fa-facebook"></span>Facebookで登録</a
+          >
+          <a href="#" class="btn twitter"
+            ><span class="fa fa-twitter"></span>Twitterで登録</a
+          >
           <!-- ボタンを作っていきます。ボタンは<a>タグで指定します。
             しかし<a>タグはインライン要素であり、インライン要素にはwidthやheightが指定できないなど不便な点があります。 -->
+
+          <!-- アイコンを表示するにはFont Awesomeというものを使うと便利です。 -->
+          <!--①Font AwesomeのCSSファイルを読み込む
+              ②<span>タグにfaクラスとfa-アイコン名クラスを指定する
+          （Font Awesomeのサイトにアイコンごとのクラス名が載っています。） -->
         </div>
       </div>
     </div>
-
     <div class="lesson-wrapper">
       <div class="container">
         <div class="heading">
@@ -124,5 +150,7 @@
         <p>Learn to Code, Learn to be Creative.</p>
       </div>
     </footer>
+    <div class="message-wrapper"></div>
+    <footer></footer>
   </body>
 </html>

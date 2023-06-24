@@ -200,3 +200,37 @@ footer {
 /*z-indexプロパティは、要素の重なりの順序を指定する際に使用します。
   z-indexは整数値で指定し、値が大きいほど上に表示されます。
   z-indexプロパティは必ずpositionプロパティと併用する必要があるので、注意しましょう。 */
+.fa {
+  margin-right: 5px;
+}
+
+header {
+  height: 65px;
+  background-color: rgba(34, 49, 52, 0.9);
+}
+
+.logo {
+  width: 124px;
+  margin-top: 20px;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+}
+
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+}

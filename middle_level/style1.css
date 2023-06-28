@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  background-color: cornflowerblue;
+  height: 100px;
+}
+
+.header-logo {
+  float: left;
+  color: aliceblue;
+  font-size: 36px;
+  padding: 20px 40px;
+}
+
+.header-list {
+  float: right;
+}
+
+.header-list li {
+  float: right;
+  color: aliceblue;
+  padding: 20px 50px;
+}
+
+.main {
+  background-color: rgb(135, 170, 235);
+  height: 800px;
+}
+
+.footer {
+  background-color: rgb(39, 78, 150);
+  height: 100px;
+}
+
+.footer-logo {
+  float: left;
+  color: aliceblue;
+  font-size: 36px;
+  padding: 20px 40px;
+}
+
+.footer-list {
+  float: left;
+}
+
+.footer-list li {
+  float: left;
+  color: aliceblue;
+  padding: 20px 50px;
+}

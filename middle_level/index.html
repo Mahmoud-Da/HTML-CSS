@@ -13,12 +13,14 @@
     <!-- <div class="header">と<div class="footer">のような、
     ヘッダーとフッターのためのタグは非常によく使われるので、HTMLは<header>と<footer>というタグが用意されています。 -->
     <header>
+
       <!-- opacityには要素の中身全てを透明にするという性質があります。
         背景色のみを透明にするには、rgbaというものを使う必要があります。 -->
       <!-- rgbは色の指定の仕方の1つで、3つの値の組み合わせで表示する色を決めます。
         色を指定するときは今まで使用してきた#ffffffのような記法を使ってもrgbを使っても構いません。 -->
       <!-- 色を透明にしたいときは色をrgbaで指定します。rgbaは4つの値をコンマ（,）区切りで入れます。4つ目の値が透明にする度合いで、0 ~ 1の数値で指定します（値が小さいほど透明になります）。 -->
       <!-- opacityプロパティは要素全体を透過させますが、rgbaを使うとその色だけを透明にすることが出来ます。 -->
+
       <div class="container">
         <div class="header-left">
           <img
@@ -30,6 +32,7 @@
           <a href="#" class="login">ログイン</a>
         </div>
       </div>
+
       <!-- transitionを使うとアニメーションをつけることができます。
 「変化の対象」や、「変化にかかる時間」などを指定できます。
 「変化の対象」にはcolorなどのプロパティを指定しますが、allを指定すると全てのプロパティに適用出来ます -->
@@ -39,6 +42,7 @@
 line-heightプロパティの「高さの中心」に文字が配置されるため、要素の高さとline-heightプロパティを同じ値にすると、文字がちょうど中央に配置されるようになります。 -->
       <!-- <a>タグはインライン要素なので、中身のテキストの部分しか大きさを持ちません。その結果、<a>タグをクリックできる範囲はテキストの部分だけになってしまいます。
   <a>タグをブロック要素にすると、大きさが親要素いっぱいに広がるので、全体をクリックできるようになります。 -->
+
     </header>
 
     <div class="top-wrapper">
@@ -68,7 +72,88 @@ line-heightプロパティの「高さの中心」に文字が配置されるた
         </div>
       </div>
     </div>
+    <div class="lesson-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>Learn Where to Get Started!</h2>
+        </div>
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/html.png" />
+              <p>HTML & CSS</p>
+            </div>
+            <p class="txt-contents">
+              Webページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/jQuery.png" />
+              <p>jQuery</p>
+            </div>
+            <p class="txt-contents">
+              素敵な動きを手軽に実装できるJavaScriptライブラリです。
+              アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/ruby.png" />
+              <p>Ruby</p>
+            </div>
+            <p class="txt-contents">
+              オープンソースの動的なプログラミング言語で、
+              シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/php.png" />
+              <p>PHP</p>
+            </div>
+            <p class="txt-contents">
+              HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- font-weightプロパティを用いると文字の太さを変更することができます。
+        normalまたはboldを指定します。 -->
+    <!-- <h1>~<h6>の要素は初期状態でfont-weight: bold;となっているので、
+        font-weight: normal;と指定すれば文字が細くなります。 -->
 
+    <!-- ボックスのwidthやheightをpxではなく%で指定すると、親要素に対してどのくらいの幅や高さを持つか指定することができます。 -->
+
+    <!-- HTMLの要素同士は通常重なって表示されることはありませんが、position: absolute;を使うと、要素同士を重ねて表示することが出来ます。 -->
+    <!-- サイト全体の左上部分を基準とし、そこからの位置をtopとleftを用いて指定します。また、rightやbottomを併用することも可能です。 -->
+
+    <!-- position: absolute;の基準位置はサイト全体の左上部分ですが、この基準位置は変更することが出来ます。 -->
+    <!-- 基準としたい親要素にposition: relative;と指定すると、その要素の左上部分が基準位置となります。 -->
+
+    <div class="message-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
+          <h3>Let's learn to code, learn to be creative!</h3>
+        </div>
+        <a href="#" class="btn message">さっそく開発する</a>
+        <!-- ボックスに影を付けるためにはbox-shadowプロパティを用います。 -->
+        <!-- 以下の図のように「影の位置」と「影の色」を指定します。 -->
+        <!-- ボタンを押したときに以下の処理をすると、へこんで見えるようになります。
+          ・影を消す
+          ・ボタンの位置を影の分だけ下げる -->
+        <!--セレクタにactiveを用いることで、要素がクリックされている間だけCSSを適用することができます。
+           セレクタ:activeというように指定します。 -->
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <img src="https://prog-8.com/images/html/advanced/footer_logo.png" />
+        <p>Learn to Code, Learn to be Creative.</p>
+      </div>
+    </footer>
     <div class="message-wrapper"></div>
     <footer></footer>
   </body>

@@ -62,6 +62,77 @@ a {
   display: inline-block;
   opacity: 0.8;
   border-radius: 4px; /*角を丸める*/
+  
+.fa {
+  margin-right: 5px;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 124px;
+  margin-top: 20px;
+}
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+}
+
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+}
+
+.lesson-wrapper {
+  height: 500px;
+  padding-bottom: 80px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.heading {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  color: #5f5d60;
+}
+
+.heading h2 {
+  font-weight: normal;
+}
+
+.lesson {
+  float: left;
+  width: 25%;
+}
+
+.lesson-icon {
+  position: relative;
+=======
+.btn {
+  /* 共有のｃｓｓ */
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px; /*角を丸める*/
 }
 
 .btn:hover {
@@ -69,6 +140,72 @@ a {
   opacity: 1;
 }
 
+.lesson-icon p {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  color: white;
+}
+
+.txt-contents {
+  width: 80%;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #b3aeb5;
+}
+
+.heading h3 {
+  font-weight: normal;
+}
+
+.message-wrapper {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.message {
+  background-color: #5dca88;
+  padding: 15px 40px;
+  box-shadow: 0 7px #1a7940;
+}
+
+.message:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}
+
+/* box-shadow: none;とすると、影を消すことが出来ます。
+このように多くのプロパティはnoneを指定することによって消すことができます。 */
+
+/* position: relative;をtopやleftと併用すると、その要素を本来の位置からずらせます */
+/* クリック時に、以下の処理をすることによって、ボタンがへこんで見えるようになります。
+・box-shadowをnoneにする
+・position: relative;とtopによって影の分だけ位置を下げる */
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+}
+
+/* position: fixed;を使うと、常に要素を画面上の指定した位置に固定させておくことができます。 */
+/* 位置は、top、left、right、bottomを使って指定します。 */
+/* positionを使用すると要素の重なりが生じます。 */
+/* その結果図のように、レッスン紹介部分とヘッダーが重なった時に、ヘッダーが隠れてしまいます。 */
+
+/*z-indexプロパティは、要素の重なりの順序を指定する際に使用します。
+  z-indexは整数値で指定し、値が大きいほど上に表示されます。
+  z-indexプロパティは必ずpositionプロパティと併用する必要があるので、注意しましょう。 */
 .fa {
   margin-right: 5px;
 }
@@ -200,37 +337,3 @@ footer {
 /*z-indexプロパティは、要素の重なりの順序を指定する際に使用します。
   z-indexは整数値で指定し、値が大きいほど上に表示されます。
   z-indexプロパティは必ずpositionプロパティと併用する必要があるので、注意しましょう。 */
-.fa {
-  margin-right: 5px;
-}
-
-header {
-  height: 65px;
-  background-color: rgba(34, 49, 52, 0.9);
-}
-
-.logo {
-  width: 124px;
-  margin-top: 20px;
-}
-
-.header-left {
-  float: left;
-}
-
-.header-right {
-  float: right;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.5s;
-}
-
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
-}

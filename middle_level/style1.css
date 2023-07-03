@@ -4,6 +4,9 @@ body {
 
 li {
   list-style: none;
+  color: aliceblue;
+  float: left;
+  padding: 33px 20px;
 }
 
 .header {
@@ -18,6 +21,7 @@ li {
   padding: 20px 40px;
 }
 
+
 .header-list li {
   float: right;
   color: aliceblue;
@@ -27,6 +31,10 @@ li {
 .main {
   background-color: rgb(135, 170, 235);
   height: 700px;
+=======
+.main {
+  background-color: rgb(135, 170, 235);
+  height: 800px;
 }
 
 .footer {
@@ -46,3 +54,4 @@ li {
   color: aliceblue;
   padding: 35px 50px;
 }
+

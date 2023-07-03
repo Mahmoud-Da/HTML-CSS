@@ -1,10 +1,14 @@
 body {
   margin: 0;
+
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 li {
   list-style: none;
+  color: aliceblue;
+  float: left;
+  padding: 33px 20px;
 }
 
 .header {

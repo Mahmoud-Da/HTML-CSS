@@ -21,6 +21,17 @@ li {
   padding: 20px 40px;
 }
 
+
+.header-list li {
+  float: right;
+  color: aliceblue;
+  padding: 40px 50px;
+}
+
+.main {
+  background-color: rgb(135, 170, 235);
+  height: 700px;
+=======
 .main {
   background-color: rgb(135, 170, 235);
   height: 800px;
@@ -30,3 +41,17 @@ li {
   background-color: rgb(39, 78, 150);
   height: 100px;
 }
+
+.footer-logo {
+  float: left;
+  color: aliceblue;
+  font-size: 36px;
+  padding: 20px 40px;
+}
+
+.footer-list li {
+  float: left;
+  color: aliceblue;
+  padding: 35px 50px;
+}
+

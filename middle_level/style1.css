@@ -35,8 +35,7 @@ li {
 
 .main {
   background-color: rgb(135, 170, 235);
-  height: 800px;
-}
+  height: 700px;
 
 .footer {
   background-color: rgb(39, 78, 150);
@@ -57,5 +56,6 @@ li {
 .footer-list li {
   float: left;
   color: aliceblue;
-  padding: 20px 50px;
+  padding: 35px 50px;
 }
+

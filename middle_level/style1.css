@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
@@ -21,21 +23,19 @@ li {
   padding: 20px 40px;
 }
 
+.header-list {
+  float: right;
+}
 
 .header-list li {
   float: right;
   color: aliceblue;
-  padding: 40px 50px;
+  padding: 20px 50px;
 }
 
 .main {
   background-color: rgb(135, 170, 235);
   height: 700px;
-=======
-.main {
-  background-color: rgb(135, 170, 235);
-  height: 800px;
-}
 
 .footer {
   background-color: rgb(39, 78, 150);
@@ -47,6 +47,10 @@ li {
   color: aliceblue;
   font-size: 36px;
   padding: 20px 40px;
+}
+
+.footer-list {
+  float: left;
 }
 
 .footer-list li {

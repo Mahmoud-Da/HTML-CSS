@@ -61,6 +61,11 @@ li {
   padding: 20px 40px;
 }
 
+.footer-image {
+  max-width: 60px;
+  height: auto;
+}
+
 .footer-list {
   float: left;
 }

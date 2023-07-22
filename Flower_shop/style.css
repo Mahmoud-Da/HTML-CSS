@@ -1,0 +1,10 @@
+#pink-background {
+    background-color: #f8cded
+}
+
+
+.map-size{
+    width: 1000px;
+    height: 1000px;
+    object-fit: contain;
+}

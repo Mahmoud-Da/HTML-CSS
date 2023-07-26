@@ -1,10 +1,56 @@
 #pink-background {
-    background-color: #f8cded
+  background-color: #d0b4ad;
 }
 
+.map-size {
+  width: 1000px;
+  height: 1000px;
+  object-fit: contain;
+}
 
-.map-size{
-    width: 1000px;
-    height: 1000px;
-    object-fit: contain;
+.logo-size {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.Home-font {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Freestyle Script", sans-serif;
+  color: #6b4037;
+}
+
+.Areas-font {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Freestyle Script", sans-serif;
+  color: #6b4037;
+}
+
+.Oders-font {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Freestyle Script", sans-serif;
+  color: #6b4037;
+}
+
+.Aboutus-font {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Freestyle Script", sans-serif;
+  color: #6b4037;
+}
+
+.Search-font {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Freestyle Script", sans-serif;
+  color: #6b4037;
+}
+
+.background-image {
+  width: 1000px;
+  height: 1000px;
+  object-fit: contain;
 }

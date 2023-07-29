@@ -1,0 +1,2 @@
+git fecth 更新　反映されない
+git pull 更新 反映する

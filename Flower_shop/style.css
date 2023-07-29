@@ -1,12 +1,22 @@
-#pink-background {
-  background-color: #d0b4ad;
+:root{
+--primary-color: #6b4037;
+--secondary-color: #d0b4ad;
+--theconday-color: #2d2726;
 }
+
+#header-font {
+  color: var(--primary-color);
+}
+#pink-background {
+  background-color: var(--secondary-color);
+}
+
 body {
   margin: 0;
   font-family: "Freestyle Script", sans-serif;
   font-size: 30px;
   font-weight: bold;
-  color: #6b4037;
+  color: var(--primary-color);
 }
 
 .logo-size {
@@ -24,7 +34,7 @@ body {
 .top-warpper {
   padding: 80px 0 200px 0;
   background-image: url(./image/beautiful-floral-frame-with-copyspace.jpg);
-  color: rgb(37, 30, 30);
+  color: var(--theconday-color);
   background-size: cover;
 }
 
@@ -37,7 +47,7 @@ body {
 .top-warpper-Areas {
   padding: 80px 0 200px 0;
   background-image: url(./image/pexels-ylanite-koppens-1883385.jpg);
-  color: rgb(37, 30, 30);
+  color: var(--theconday-color);
   background-size: cover;
 }
 
@@ -60,8 +70,11 @@ body {
 }
 
 .top-warpper-Aboutus {
+  position: relative;
   padding: 80px 0 200px 0;
   background-image: url(./image/FINAL_Cut_Flowers_credit-Stocksy.webp);
-  color: rgb(37, 30, 30);
+  color: var(--theconday-color);
   background-size: cover;
+  transform: rotate(-45deg);
+  z-index:-1;
 }

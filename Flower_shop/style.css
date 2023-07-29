@@ -52,7 +52,7 @@ body {
 }
 
 .fixed-img {
-  position: fixed;
+  position: absolute;
   top: 150px;
   right: 150px;
 }

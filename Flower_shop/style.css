@@ -1,7 +1,10 @@
 #pink-background {
   background-color: #d0b4ad;
 }
-
+body {
+  margin: 0;
+  font-family: "Freestyle Script", sans-serif;
+}
 .map-size {
   width: 1000px;
   height: 1000px;
@@ -49,8 +52,15 @@
   color: #6b4037;
 }
 
-.background-image {
-  width: 1000px;
-  height: 1000px;
-  object-fit: contain;
+.container {
+  width: 400px;
+  padding: 0 15px;
+  margin: 50px 150px;
+}
+
+.top-warpper {
+  padding: 180px 0 100px 0;
+  background-image: url(./image/beautiful-floral-frame-with-copyspace.jpg);
+  color: rgb(37, 30, 30);
+  background-size: cover;
 }

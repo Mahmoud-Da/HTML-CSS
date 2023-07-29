@@ -4,52 +4,15 @@
 body {
   margin: 0;
   font-family: "Freestyle Script", sans-serif;
-}
-.map-size {
-  width: 1000px;
-  height: 1000px;
-  object-fit: contain;
+  font-size: 30px;
+  font-weight: bold;
+  color: #6b4037;
 }
 
 .logo-size {
   width: 100px;
   height: 60px;
   object-fit: contain;
-}
-
-.Home-font {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Freestyle Script", sans-serif;
-  color: #6b4037;
-}
-
-.Areas-font {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Freestyle Script", sans-serif;
-  color: #6b4037;
-}
-
-.Oders-font {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Freestyle Script", sans-serif;
-  color: #6b4037;
-}
-
-.Aboutus-font {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Freestyle Script", sans-serif;
-  color: #6b4037;
-}
-
-.Search-font {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Freestyle Script", sans-serif;
-  color: #6b4037;
 }
 
 .container {
@@ -59,8 +22,46 @@ body {
 }
 
 .top-warpper {
-  padding: 180px 0 100px 0;
+  padding: 80px 0 200px 0;
   background-image: url(./image/beautiful-floral-frame-with-copyspace.jpg);
+  color: rgb(37, 30, 30);
+  background-size: cover;
+}
+
+.container-Areas {
+  width: 600px;
+  padding: 0 15px;
+  margin: 120px 150px;
+}
+
+.top-warpper-Areas {
+  padding: 80px 0 200px 0;
+  background-image: url(./image/pexels-ylanite-koppens-1883385.jpg);
+  color: rgb(37, 30, 30);
+  background-size: cover;
+}
+
+.fixed-img {
+  position: fixed;
+  top: 150px;
+  right: 150px;
+}
+
+.map-size {
+  height: 500px;
+  width: 500px;
+  object-fit: contain;
+}
+
+.container-Aboutus {
+  width: 600px;
+  padding: 0 15px;
+  margin: 130px 150px;
+}
+
+.top-warpper-Aboutus {
+  padding: 80px 0 200px 0;
+  background-image: url(./image/FINAL_Cut_Flowers_credit-Stocksy.webp);
   color: rgb(37, 30, 30);
   background-size: cover;
 }

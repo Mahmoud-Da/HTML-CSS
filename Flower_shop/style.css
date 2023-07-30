@@ -5,6 +5,14 @@
   --font-color: #faede7;
 }
 
+body {
+  margin: 0;
+  font-family: "Freestyle Script", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
 #header-font {
   color: var(--primary-color);
 }
@@ -12,12 +20,20 @@
   background-color: var(--secondary-color);
 }
 
-body {
-  margin: 0;
-  font-family: "Freestyle Script", sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--primary-color);
+#next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--theconday-color);
+  font-size: 20px;
+}
+
+#return {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: var(--theconday-color);
+  font-size: 20px;
 }
 
 .logo-size {
@@ -97,20 +113,4 @@ body {
   background-image: url(./image/Home+Page+Image+Weddings.jpg);
   color: var(--theconday-color);
   background-size: cover;
-}
-
-#next {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  color: var(--theconday-color);
-  font-size: 20px;
-}
-
-#return {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  color: var(--theconday-color);
-  font-size: 20px;
 }

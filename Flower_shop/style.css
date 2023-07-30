@@ -1,7 +1,8 @@
-:root{
---primary-color: #6b4037;
---secondary-color: #d0b4ad;
---theconday-color: #2d2726;
+:root {
+  --primary-color: #6b4037;
+  --secondary-color: #d0b4ad;
+  --theconday-color: #2d2726;
+  --font-color: #faede7;
 }
 
 #header-font {
@@ -65,16 +66,51 @@ body {
 
 .container-Aboutus {
   width: 600px;
-  padding: 0 15px;
-  margin: 130px 150px;
+  position: absolute;
+  top: 150px;
+  right: 20px;
+}
+
+.container-Aboutus1 {
+  width: 600px;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+.img-Aboutus {
+  top: 10px;
+  left: -80px;
+  width: 80%;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(-15deg);
+  border-color: var(--font-color);
 }
 
 .top-warpper-Aboutus {
-  position: relative;
-  padding: 80px 0 200px 0;
-  background-image: url(./image/FINAL_Cut_Flowers_credit-Stocksy.webp);
+  color: var(--theconday-color);
+}
+
+.top-warpper-Aboutus1 {
+  padding: 80px 0px 650px 0;
+  background-image: url(./image/Home+Page+Image+Weddings.jpg);
   color: var(--theconday-color);
   background-size: cover;
-  transform: rotate(-45deg);
-  z-index:-1;
+}
+
+#next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--theconday-color);
+  font-size: 20px;
+}
+
+#return {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: var(--theconday-color);
+  font-size: 20px;
 }

@@ -158,10 +158,7 @@ body {
   color: var(--theconday-color);
 }
 
-.row {
-}
-
 .form-control {
   width: 300px;
-  left: 80px;
+  left: 500px;
 }

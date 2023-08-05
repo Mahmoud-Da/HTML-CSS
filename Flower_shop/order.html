@@ -42,13 +42,11 @@
                 >
               </li>
               <li class="Areas-font">
-                <a id="header-font" class="nav-link" href="./Areas.html"
-                  >Areas</a
-                >
+                <a id="header-font" class="nav-link" href="./area.html">Area</a>
               </li>
               <li class="Oders-font">
-                <a id="header-font" class="nav-link active" aria-current="page">
-                  Oders
+                <a id="header-font" class="nav-link" href="./order.html">
+                  Order
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Action</a></li>
@@ -60,7 +58,7 @@
                 </ul>
               </li>
               <li class="Aboutus-font me-2">
-                <a id="header-font" class="nav-link" href="./About_us.html"
+                <a id="header-font" class="nav-link" href="./about_us.html"
                   >About us</a
                 >
               </li>
@@ -80,24 +78,84 @@
         </div>
       </nav>
     </header>
-    <div class="top-warpper-Areas">
-      <div class="container-Areas">
-        <h1>Hana shop</h1>
-        <h2>
-          〒220-0012 Shinogawaken Yokohamashi Nishiku 2036-1
-          <p></p>
-          <p>Business hours: 8:00-17:00</p>
-          <p>Day off: Monday & 1/1</p>
-        </h2>
+    <div class="row g-3">
+      <div class="col">
+        <label for="inputFull-Name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputFull-Name"
+          placeholder="Adam Smith"
+        />
       </div>
-      <div class="fixed-img">
-        <img
-          src="./image/Screenshot 2023-07-22 at 12.59.45.png"
-          alt=""
-          class="map-size"
+      <div class="col">
+        <label for="inputPhone-Number" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPhone-Number"
+          placeholder="080-1234-5678"
+        />
+      </div>
+      <div class="col">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          placeholder="lili171819@gmail.com"
         />
       </div>
     </div>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="1234 Main St"
+        />
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          placeholder="Apartment, studio, or floor"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity" />
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">State</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" />
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" />
+          <label class="form-check-label" for="gridCheck"> Check me out </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </form>
+
     <footer></footer>
   </body>
 </html>

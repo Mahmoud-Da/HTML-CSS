@@ -160,5 +160,11 @@ body {
 
 .form-control {
   width: 300px;
-  left: 500px;
+}
+
+.order-body {
+  padding: 80px 0 200px 0;
+  background-image: url(./image/bnr_osonae.jpg);
+  color: var(--primary-color);
+  background-size: cover;
 }

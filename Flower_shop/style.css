@@ -44,6 +44,11 @@ body {
   transform: rotate(20deg);
 }
 
+#top-text-color {
+  width: 100%;
+  color: var(--primary-color);
+}
+
 .logo-size {
   width: 100px;
   height: 60px;
@@ -167,4 +172,13 @@ body {
   background-image: url(./image/bnr_osonae.jpg);
   color: var(--primary-color);
   background-size: cover;
+}
+
+.back-to-top {
+  position: absolute;
+  right: 0px;
+  background: var(--secondary-color);
+  padding: 3px;
+  text-align: right;
+  cursor: pointer;
 }

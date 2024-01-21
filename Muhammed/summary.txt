@@ -1,0 +1,9 @@
+- elements open tag close tag
+- full path / relative path
+- ./ current folder
+- div is normal element without any styles 
+- comments for only comunicating (not readble by compiler)
+- a HyperText
+- parent element child element
+- debug 
+- V8 

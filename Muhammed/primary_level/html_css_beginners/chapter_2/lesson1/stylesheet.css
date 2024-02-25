@@ -1,0 +1,37 @@
+h1 {
+  font-family: cursive;
+}
+
+p {
+  color: rgb(0, 195, 255)
+}
+
+li {
+  color: #c748d8;
+}
+
+
+.green-large {
+  color: green;
+  font-size: large;
+}
+
+.green-small {
+  color: green;
+  font-size: small;
+  background-color: red;
+}
+
+#Yellow {
+  color: yellow;
+}
+
+.green-large #Yellow {
+  color: red
+}
+
+.yokohama-map-size {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+}

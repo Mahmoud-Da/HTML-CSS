@@ -39,3 +39,131 @@ This is the beginning of an exciting journey into the world of web development. 
 
 Let’s jump in and get started.
 
+
+*** 2-_Languages_and_Tools_of_Web_Development ***
+
+## **Web Development Roadmap: Your First Steps**
+
+This course marks the beginning of your journey into web development. Here’s a simple roadmap to help you understand where you are and what your next steps should be.
+
+---
+
+### **1. Understanding the Structure of a Website**
+
+Every website has two main parts:
+
+- **Frontend**  
+  The part users interact with in their browsers — includes visuals, layout, and user interactions.
+
+- **Backend**  
+  The behind-the-scenes part — responsible for storing and managing data, typically in databases, and providing this data to the frontend.
+
+---
+
+### **2. Web Development Career Paths**
+
+Web development jobs typically fall into one of the following categories:
+
+- **Frontend Developer**  
+  Works on visual aspects using:
+  - HTML (HyperText Markup Language): Defines the structure of web pages.
+  - CSS (Cascading Style Sheets): Adds style and design to web pages.
+  - JavaScript: Adds interactivity and dynamic behavior.
+
+- **Backend Developer**  
+  Focuses on server-side logic, databases, APIs (not covered in this course).
+
+- **Full-Stack Developer**  
+  Works on both frontend and backend.
+
+---
+
+### **3. Core Frontend Technologies**
+
+#### **HTML**
+- Defines the structure and building blocks of a web page (e.g., images, text, buttons).
+
+#### **CSS**
+- Handles visual styling: fonts, colors, spacing, layout, responsiveness, animations.
+
+#### **JavaScript**
+- Adds interactivity and behavior (e.g., clicking a button, liking a tweet).
+- It's a **programming language**, unlike HTML and CSS.
+
+---
+
+### **4. Web Page Analogy**
+
+**Think of a web page like a building:**
+
+- **HTML** = Structure (walls, rooms)
+- **CSS** = Aesthetics (paint, tiles, decor)
+- **JavaScript** = Functionality (elevators, doors that open)
+
+---
+
+### **5. Example: Building a Tweet Layout**
+
+- **HTML**: Create layout blocks (image, username, message, icons).
+- **CSS**: Style the page (bold text, rounded images, hover effects).
+- **JavaScript**: Add functionality (liking, retweeting, commenting).
+
+---
+
+### **6. Learning Timeline for Beginners**
+
+- **HTML & CSS**:  
+  Spend 3–5 hours daily  
+  → Gain solid foundation in 4–6 weeks
+
+- **JavaScript**:  
+  Continue for another 6 weeks  
+  → Not an expert, but a practical understanding
+
+- **Projects**:  
+  Apply knowledge and continue learning by building things.
+
+---
+
+### **7. Frontend Frameworks and Libraries**
+
+- Help streamline development and reduce repetitive tasks.
+- Popular choices include:
+  - **React** (library) — most widely used, recommended for beginners
+  - **Angular** (framework)
+  - **Vue** (framework)
+
+> Once you know React, it’s easier to learn others as needed.
+
+- Learning React may take 1–2 months.
+
+---
+
+### **8. Version Control with Git**
+
+- Used to track code history and collaborate with others.
+- **Git** is the most popular system (used by 70%+ of companies).
+- Other systems: Subversion, Mercurial.
+- Learning Git takes about **two weeks**.
+- Essential for every job in web development.
+
+---
+
+### **9. Summary: Essential Frontend Skills**
+
+Focus on these four core areas:
+
+1. HTML  
+2. CSS  
+3. JavaScript  
+4. Git
+
+These are required in almost every frontend development job.
+
+> **Tip:** Don’t try to learn too many things at once. Focus, practice, and grow steadily.
+
+---
+
+### **Next Topic**
+
+We'll dive into **how the web works** — understanding the browser, servers, and what happens when you visit a website.

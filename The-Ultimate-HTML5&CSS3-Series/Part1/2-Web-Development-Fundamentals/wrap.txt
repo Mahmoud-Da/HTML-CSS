@@ -388,3 +388,87 @@ In the next lesson, you’ll see these steps demonstrated in action.
   - Write basic content
   - Explore how different fonts and resources are used
   - Learn how to **publish files online**, potentially via platforms like YouTube
+
+*** 5-_HTML_Basics ***
+
+# **Creating Your First HTML Document**
+
+### 1. **Setup**
+
+- **Create a folder** on your desktop or anywhere on your computer. Name it `html` (or any other name).
+- **Open Visual Studio Code (VS Code)**.
+- Go to the **Explorer panel**, select **“Open Folder”**, and open the newly created folder.
+- Inside this folder, create a new file named `index.html`.
+  - `index.html` typically represents the homepage of a website.
+
+---
+
+### 2. **Basic HTML Structure**
+
+#### a. **DocType Declaration**
+- Begin with the `<!DOCTYPE html>` declaration.
+  - This tells the browser you’re using HTML5.
+  - Although HTML is not case-sensitive, the convention is to use uppercase for `DOCTYPE`.
+
+#### b. **HTML Boilerplate**
+- Add the `<html>` element using `html` + `Tab`.
+- Inside `<html>`, add:
+  - `<head>`: Contains meta-information about the document.
+  - `<body>`: Contains visible content.
+
+#### c. **Head Section**
+- Add a `<title>` element inside `<head>`.
+  - Example: `<title>My First Web Page</title>`
+
+---
+
+### 3. **Launching with Live Server**
+
+- Save the file (`Cmd + S` on Mac, `Ctrl + S` on Windows).
+- **Right-click** in the editor and choose **“Open with Live Server”**.
+- The browser opens at `http://127.0.0.1:<port>/index.html`.
+  - `127.0.0.1` is the loopback IP (your local computer).
+  - The port number is where your local server listens for requests.
+
+---
+
+### 4. **Adding Content to the Body**
+
+#### a. **Image Element**
+- Use the `<img>` tag to display an image:
+-------------------code----------------------
+  <img src="images/mosh.jpg" />
+-------------------code----------------------
+- **Differences of `<img>`:**
+  - It is a **self-closing tag** (does not need a closing tag).
+  - In HTML5, you **do not need** a trailing slash (`/`) at the end.
+- Create an `images` folder in the project directory.
+- Drop the desired image inside it (e.g., `mosh.jpg`).
+- The `src` path becomes `images/mosh.jpg`.
+
+#### b. **Text Content**
+- Add a paragraph for the Twitter handle:
+-------------------code----------------------
+  <p>@moshhamadani</p>
+-------------------code----------------------
+- Add another paragraph for the tweet content:
+-------------------code----------------------
+  <p>I love to teach you HTML.</p>
+-------------------code----------------------
+
+---
+
+### 5. **Viewing the Page**
+
+- When using Live Server:
+  - The page **auto-refreshes** upon saving changes.
+- The image and text elements now appear on the page.
+  - However, the layout and styling are plain.
+  - It doesn’t look like a tweet yet because **CSS has not been applied**.
+
+---
+
+### 6. **Conclusion**
+
+- **HTML** defines the **structure** of a web page.
+- In the next lesson, **CSS** will be introduced to style and visually enhance the content.

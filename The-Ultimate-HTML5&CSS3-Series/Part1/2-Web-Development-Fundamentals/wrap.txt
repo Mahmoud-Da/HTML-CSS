@@ -167,3 +167,126 @@ These are required in almost every frontend development job.
 ### **Next Topic**
 
 We'll dive into **how the web works** — understanding the browser, servers, and what happens when you visit a website.
+
+
+*** 3-_How_the_Web_Works ***
+
+## **How the Web Works: Step-by-Step Explanation**
+
+Have you ever wondered what happens when you type a website address into your browser and hit enter? In this lesson, 
+we’ll walk through the entire process and explain key concepts every web developer should understand.
+
+---
+
+### **1. The Role of the URL**
+
+- When you visit a website like `facebook.com`, the address you type in the browser is called a **URL**.
+- **URL** stands for **Uniform Resource Locator**.
+- It identifies and locates a specific resource on the internet.
+  - Resources can be:  
+    - HTML documents (web pages)  
+    - Images  
+    - Videos  
+    - Fonts  
+    - And more
+
+---
+
+### **2. The Client-Server Model**
+
+- **Client**: Your browser
+- **Server**: The computer that hosts the website
+- Your browser (client) sends a request to the web server asking for the homepage.
+- The server processes the request and sends back a response.
+
+> This model is similar to sending a text message. Your phone sends (client), your friend’s phone receives (server).
+
+---
+
+### **3. Communication with HTTP**
+
+- The browser communicates with the server using the **HTTP protocol**:
+  - **HTTP**: Hypertext Transfer Protocol — a textual protocol for communication.
+  - **HTTPS**: Secure version of HTTP with encryption.
+- HTTP is not a programming language, but a set of rules for how clients and servers talk.
+
+---
+
+### **4. HTTP Request Example (Simplified)**
+
+When you visit a website, your browser sends an HTTP request like:
+
+```
+GET /index.html HTTP/1.1  
+Host: codewithmosh.com  
+Accept-Language: en
+```
+
+- The browser requests `index.html` (often the homepage).
+- It includes the host and other optional headers.
+
+---
+
+### **5. HTTP Response Example (Simplified)**
+
+The server responds with an HTTP response:
+
+```
+HTTP/1.1 200 OK  
+Date: [server date & time]  
+Content-Type: text/html  
+
+<html>...</html>
+```
+
+- The `200 OK` status code means the request was successful.
+- The server sends back the HTML document for the page.
+
+---
+
+### **6. The DOM (Document Object Model)**
+
+- Once the browser receives the HTML, it constructs a **DOM**.
+- The DOM is a structured representation of all the elements in the page.
+- These include:
+  - Paragraphs
+  - Images
+  - Links
+  - Headings
+  - And more
+
+---
+
+### **7. Fetching Additional Resources**
+
+- While reading the HTML, the browser may find links to other resources:
+  - Images
+  - Fonts
+  - CSS files
+  - JavaScript files
+- For each resource, the browser sends separate HTTP requests.
+- These requests are often sent **in parallel** to improve performance.
+
+---
+
+### **8. Rendering the Page**
+
+- Once all necessary resources are downloaded, the browser **renders** the page.
+- **Rendering** means converting the HTML and resources into a visual display that you see in the browser.
+
+---
+
+### **Summary**
+
+1. You enter a URL in the browser.
+2. The browser (client) sends an HTTP request to the server.
+3. The server sends back an HTTP response with the HTML document.
+4. The browser parses the HTML and constructs the DOM.
+5. The browser fetches other required resources.
+6. Finally, the browser renders the page.
+
+---
+
+### **Next Lesson Preview**
+
+In the next lesson, you’ll see these steps demonstrated in action.

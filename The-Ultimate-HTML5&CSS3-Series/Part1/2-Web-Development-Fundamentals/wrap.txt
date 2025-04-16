@@ -290,3 +290,101 @@ Content-Type: text/html
 ### **Next Lesson Preview**
 
 In the next lesson, you’ll see these steps demonstrated in action.
+
+
+*** 4-_Inspecting_HTTP_Requests_and_Responses ***
+
+## **Inspecting HTTP Requests and Responses Using Chrome DevTools**
+
+
+### **1. Accessing Chrome DevTools**
+
+- Open **Chrome** and go to **google.com**.
+- To open DevTools:
+  - Go to the menu: `View > Developer > Developer Tools`
+  - **Keyboard shortcuts:**
+    - macOS: `Option + Command + I`
+    - Windows: `Ctrl + Shift + I` (or similar depending on version)
+- Remember the shortcut for faster access in the future.
+
+---
+
+### **2. DevTools Layout**
+
+- DevTools includes various tabs:
+  - `Elements`, `Console`, `Sources`, `Network`, and more.
+- We're focusing on the **Network** tab to inspect HTTP traffic.
+- DevTools can be docked:
+  - Bottom (default)
+  - Left / Right
+  - **Undocked** as a separate window (recommended for more workspace)
+
+---
+
+### **3. Refresh the Page to See Network Requests**
+
+- After opening the Network tab:
+  - Refresh the page to capture network traffic:
+    - macOS: `Command + R`
+    - Windows: `Ctrl + R`
+    - Or click the **Refresh** button in the browser.
+- You'll now see a list of **HTTP requests** made by the browser.
+
+---
+
+### **4. Analyzing HTTP Requests**
+
+- Each item in the list is a request made to load a resource.
+- The first request is usually for the **HTML document** (e.g., `google.com`).
+  - **Request Type**: `document`
+  - **Status Code**: `200 OK`
+  - **Transferred Data**: e.g., 94KB
+  - **Time Taken**: Duration to get the response
+
+---
+
+### **5. Viewing Request Details**
+
+- Click on any request to view more info.
+- In the **Headers** tab:
+  - **General Info**:
+    - **Request URL**
+    - **Request Method**: usually `GET`
+    - **Status Code**: e.g., `200`
+    - **Remote Address**: IP of the server
+  - **Response Headers**:
+    - **Content-Type**: e.g., `text/html`
+    - **Date**: Response timestamp
+- In the **Preview** tab:
+  - See a rendered preview of the HTML document returned from the server.
+
+---
+
+### **6. Loading Additional Resources**
+
+- The initial HTML document includes links to:
+  - Images (e.g., `.png`)
+  - Fonts (e.g., `.woff`, `.ttf`)
+  - CSS, JavaScript files
+- Each of these resources triggers **separate HTTP requests**.
+- You can identify these in the list below the main request.
+
+---
+
+### **7. Filtering Requests**
+
+- Use the **Filter icon** to narrow down request types:
+  - `All` (default)
+  - `Doc` – HTML documents
+  - `Font` – Font files
+  - `Image`, `Script`, `XHR`, etc.
+
+---
+
+### **Next Steps**
+
+- In the next lesson, you'll learn how to:
+  - Create your **first HTML document**
+  - Write basic content
+  - Explore how different fonts and resources are used
+  - Learn how to **publish files online**, potentially via platforms like YouTube

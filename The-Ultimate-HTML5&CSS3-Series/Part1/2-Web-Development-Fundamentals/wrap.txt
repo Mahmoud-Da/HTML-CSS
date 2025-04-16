@@ -1,0 +1,41 @@
+*** 1-_Introduction ***
+
+## **Introduction to Web Development**
+
+Welcome to your web development journey. This course is structured to guide you through the foundational elements of web development and gradually help you build a complete, beautiful web page by the end.
+
+### **Section Overview: Fundamentals of Web Development**
+
+In this section, you will:
+
+1. **Learn Core Web Concepts**
+   - Understand the essential languages and tools used in web development.
+   - Get familiar with key terminology such as:
+     - URL (Uniform Resource Locator)
+     - HTTP (HyperText Transfer Protocol)
+     - DOM (Document Object Model)
+
+2. **Understand How Websites Work**
+   - Explore what happens behind the scenes when you visit a website using a browser.
+   - Gain insight into how browsers, servers, and the internet interact.
+
+3. **Use Chrome DevTools**
+   - Learn how to inspect network traffic.
+   - Explore how developers use DevTools to debug and optimize front-end code.
+
+4. **Introduction to HTML & CSS**
+   - Cover the basics of HTML for structuring content.
+   - Learn CSS for styling your web pages.
+
+5. **Validate Web Pages**
+   - Understand how to ensure your web pages are properly coded and standards-compliant.
+   - Learn why validation is important and how to do it correctly.
+
+---
+
+### **Conclusion**
+
+This is the beginning of an exciting journey into the world of web development. Each concept will build on the previous one, leading you toward creating your first complete and polished web page.
+
+Let’s jump in and get started.
+

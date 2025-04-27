@@ -681,3 +681,75 @@ p {
 - It is a crucial tool for frontend developers to fine-tune layouts and designs.
 - More in-depth exploration of DevTools will be covered later in the course.
 
+
+
+
+*** 9-_Validating_Web_Pages ***
+# Lesson: HTML and CSS Validation
+
+## 1. Introduction to Validation
+- As we write code, mistakes such as typos or incorrect syntax can cause issues with how web pages appear.
+- **Validation** helps identify potential errors in our code.
+- Even if a page looks correct, validation ensures it follows proper standards.
+
+## 2. Using the Standard HTML Validator
+
+### Accessing the Validator
+- Visit **validator.w3.org** — the standard HTML validation service.
+
+### Methods of Validation
+- **By URL:** Validate using a live website's address.
+  - Not suitable for local development (e.g., `127.0.0.1`).
+- **By File Upload:** Upload an HTML file directly.
+- **By Direct Input:** Paste the HTML code into the validator.
+
+### Example: Validating a Local File
+- Upload the `index.html` file.
+- Results:
+  - **1 Warning**: Missing `lang` attribute in the `<html>` tag.
+    - **Fix**: Add `lang="en"` to the `<html>` tag to specify the page's language.
+  - **2 Errors**:
+    - **Character Encoding Not Declared**: 
+      - Will be discussed in the next section.
+    - **Missing `alt` Attribute on Image**:
+      - Fix by adding an `alt` attribute to the `<img>` tag, for example:
+        - `alt="An image of Mosh Hamadani"`
+
+### Re-validating After Fixes
+- After correcting the HTML:
+  - Only the character encoding error remains, which will be addressed later.
+
+## 3. CSS Validation
+
+### Accessing the CSS Validator
+- Visit **jigsaw.w3.org/css-validator**.
+- Alternatively, search "CSS Validator" on Google and use the first link.
+
+### Methods of CSS Validation
+- **By URL**
+- **By File Upload**
+- **By Direct Input**
+
+### Validating Embedded CSS
+- Since the CSS is embedded within the HTML file:
+  - Copy the CSS code.
+  - Paste it into the **Direct Input** section.
+  - Validate.
+
+### Results
+- No errors found.
+- CSS code is correctly written.
+
+## 4. Importance of Validation
+- Validation is crucial for:
+  - Identifying subtle coding errors.
+  - Ensuring proper display across different browsers and devices.
+- If a web page does not appear as expected, **start by validating the code** to find possible mistakes.
+
+---
+
+# Summary
+- HTML and CSS validation ensures code quality and compatibility.
+- Always fix warnings and errors reported by validators.
+- Validation helps maintain **professional**, **readable**, and **standard-compliant** code.
+

@@ -573,3 +573,57 @@ p {
 - CSS syntax is different from HTML.
 - Throughout the course, both HTML and CSS will be covered in detail.
 - Next topic: **Formatting code using Prettier**.
+
+
+*** 7-_Formatting_Code ***
+# Lesson: Formatting Code with Prettier
+
+## 1. Browsers and White Spaces
+- Browsers **ignore white spaces** in HTML and CSS code.
+- Example:
+  - You can place multiple elements on a single line, and the browser will render the page the same.
+- Browsers **do not care** about how the code is formatted.
+- However, **formatting code** properly is important for **readability** and **maintenance**.
+
+## 2. Importance of Code Formatting
+- Well-formatted code is easier to **read** and **maintain**.
+- Good formatting is especially important when working in **teams**.
+  - Different people may have different formatting styles.
+  - Using a formatter ensures **consistency** across all team members.
+
+## 3. Introduction to Prettier
+- **Prettier** is a plugin that formats code consistently and automatically.
+- It works for multiple languages, including **HTML** and **CSS**.
+
+## 4. Using Prettier in VS Code
+
+### Accessing the Command Palette
+- Open the **Command Palette**:
+  - On Mac: `Shift + Command + P`
+  - On Windows: `Shift + Control + P`
+
+### Formatting the Document
+- In the Command Palette, search for **Format Document**.
+- Press **Enter**.
+
+### Choosing the Formatter
+- If multiple formatters are available, VS Code will ask you to select one.
+- Choose **Prettier** as the default formatter for HTML and CSS files.
+
+### Result
+- Prettier automatically formats the code properly.
+- Elements are no longer placed on the same line unnecessarily.
+- Code becomes more organized and easier to understand.
+
+## 5. Automating Code Formatting on Save
+
+### Setting Up Auto-Format
+- Go to the top menu:
+  - Select **Code** → **Preferences** → **Settings**.
+- Search for **Format On Save**.
+- Enable the **Format On Save** setting.
+
+### Benefit
+- Now, every time you **save** your file, VS Code will automatically format the code using Prettier.
+- This saves time and keeps the code consistently formatted without manual effort.
+

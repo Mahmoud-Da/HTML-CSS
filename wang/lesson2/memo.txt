@@ -1,0 +1,13 @@
+Relative Path:
+the path from the current location
+ex:
+lesson2/img/bmw3.jpg
+
+
+Absolute Path:
+it's the path where starts from the root
+ex:
+/Users/mahmouddabbbagh/moody/HTML-CSS/wang/lesson2/img/bmw3.jpg
+
+Note:
+always use the relative path in our project

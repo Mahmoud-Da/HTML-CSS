@@ -216,11 +216,11 @@ we’ll walk through the entire process and explain key concepts every web devel
 
 When you visit a website, your browser sends an HTTP request like:
 
-```
+-------------------code----------------------
 GET /index.html HTTP/1.1  
 Host: codewithmosh.com  
 Accept-Language: en
-```
+-------------------code----------------------
 
 - The browser requests `index.html` (often the homepage).
 - It includes the host and other optional headers.
@@ -231,13 +231,13 @@ Accept-Language: en
 
 The server responds with an HTTP response:
 
-```
+-------------------code----------------------
 HTTP/1.1 200 OK  
 Date: [server date & time]  
 Content-Type: text/html  
 
 <html>...</html>
-```
+-------------------code----------------------
 
 - The `200 OK` status code means the request was successful.
 - The server sends back the HTML document for the page.
@@ -472,3 +472,104 @@ In the next lesson, you’ll see these steps demonstrated in action.
 
 - **HTML** defines the **structure** of a web page.
 - In the next lesson, **CSS** will be introduced to style and visually enhance the content.
+
+*** 6-_CSS_Basics ***
+# Lesson: Introduction to CSS
+
+## 1. Adding CSS to the Page
+- In the `<head>` element, after the `<title>`, add a `<style>` element.
+- Write CSS code between the `<style>` tags.
+
+## 2. Writing CSS Rules
+- A CSS rule consists of:
+  - A **selector** (e.g., `img`) to select the element.
+  - A **pair of curly braces `{}`** containing one or more **declarations**.
+  - Each **declaration** has:
+    - A **property** (e.g., `width`),
+    - A **value** (e.g., `100px`),
+    - Separated by a colon `:`,
+    - Ending with a semicolon `;`.
+
+### Example
+-------------------code----------------------
+img {
+  width: 100px;
+}
+-------------------code----------------------
+
+## 3. Improving the Image
+- The image is too large, so we:
+  - Set `width` to `100px`.
+- Save changes and refresh to see the smaller image.
+
+### Making Edges Softer
+- Add `border-radius` property:
+-------------------code----------------------
+img {
+  width: 100px;
+  border-radius: 10px;
+}
+-------------------code----------------------
+- This makes the image edges rounder and softer.
+
+### Making the Image Completely Round
+- Set `border-radius` to half of the width:
+-------------------code----------------------
+img {
+  width: 100px;
+  border-radius: 50px;
+}
+-------------------code----------------------
+
+## 4. Positioning the Image
+- To push the image to the left side:
+  - Use the `float` property:
+-------------------code----------------------
+img {
+  width: 100px;
+  border-radius: 50px;
+  float: left;
+}
+-------------------code----------------------
+
+- To add space between the image and the text:
+  - Use the `margin-right` property:
+-------------------code----------------------
+img {
+  width: 100px;
+  border-radius: 50px;
+  float: left;
+  margin-right: 10px;
+}
+-------------------code----------------------
+
+## 5. Styling Text
+- To make the **user name** text bold:
+  - Apply a CSS rule to the `<p>` element:
+-------------------code----------------------
+p {
+  font-weight: bold;
+}
+-------------------code----------------------
+- However, this affects all `<p>` elements.
+
+## 6. Targeting Specific Elements with Classes
+- To apply styles only to the user name:
+  1. Add a `class` attribute to the first `<p>`:
+-------------------code----------------------
+<p class="user-name">Username</p>
+-------------------code----------------------
+  2. Update the CSS rule to target the class:
+-------------------code----------------------
+.user-name {
+  font-weight: bold;
+}
+-------------------code----------------------
+- Notes:
+  - Classes allow you to categorize and style elements independently.
+  - `.` is used in CSS to select a class.
+
+## 7. Summary
+- CSS syntax is different from HTML.
+- Throughout the course, both HTML and CSS will be covered in detail.
+- Next topic: **Formatting code using Prettier**.

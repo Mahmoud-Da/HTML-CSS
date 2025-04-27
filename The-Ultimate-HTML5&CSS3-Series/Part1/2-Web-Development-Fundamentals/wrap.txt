@@ -627,3 +627,57 @@ p {
 - Now, every time you **save** your file, VS Code will automatically format the code using Prettier.
 - This saves time and keeps the code consistently formatted without manual effort.
 
+
+*** 8-_Inspecting_Pages_Using_DevTools ***
+# Lesson: Introduction to Inspecting the DOM with DevTools
+
+## 1. Understanding the DOM (Document Object Model)
+- When the browser reads an HTML document, it constructs the **Document Object Model (DOM)**.
+- The DOM represents the structure of the web page as a tree of objects.
+
+## 2. Viewing the DOM in Action with Chrome DevTools
+
+### Opening DevTools
+- Shortcut to open DevTools:
+  - On Mac: `Shift + Command + I`
+  - On Windows: `Shift + Control + I` (may vary slightly)
+
+### Elements Tab
+- In DevTools, go to the **Elements** tab.
+- On the left side, you will see the DOM structure.
+  - HTML elements such as `<html>`, `<head>`, `<body>`, etc.
+- Some extra elements may appear, like `<script>` and `<div>`, injected by **Live Server** for auto-reloading.
+  - These can be ignored for now.
+
+### Inspecting Elements
+- Hover over an element in the Elements panel:
+  - The corresponding element is highlighted in the browser window.
+- Click on an element:
+  - The **right panel** shows the **styles** applied to that element.
+
+## 3. Modifying Styles in DevTools
+
+### Viewing and Toggling Styles
+- See CSS properties like `border-radius`, `width`, etc.
+- Enable or disable styles by checking or unchecking them.
+- Example:
+  - Disabling the `width` property makes the image return to its original size.
+
+### Editing Style Values
+- Click on a property value (e.g., `width: 100px`) and change it.
+- Use the **up and down arrow keys** to increase or decrease values interactively.
+- This helps developers quickly experiment and adjust styles.
+
+## 4. Tracing Styles to Source Code
+
+- In the styles panel, you can see where a style is defined.
+- Example:
+  - If a style is defined in `index.html` on line 6, clicking the link will jump to that exact line.
+- This takes you to the **Sources** tab in DevTools.
+- You can return to the **Elements** tab anytime to continue inspecting other elements.
+
+## 5. Summary
+- **DevTools** allows you to inspect, modify, and test styles directly in the browser.
+- It is a crucial tool for frontend developers to fine-tune layouts and designs.
+- More in-depth exploration of DevTools will be covered later in the course.
+

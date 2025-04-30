@@ -95,3 +95,142 @@ Even if you already know HTML basics, it’s highly recommended to go through th
 - Use optional meta elements for better structure and clarity.
 
 ---
+
+
+
+What is SEO?
+**SEO** stands for **Search Engine Optimization**.
+
+It is the practice of improving a website’s visibility and ranking in search engine results (like Google, Bing, etc.) to attract more **organic (non-paid)** traffic.
+
+### Key Aspects of SEO:
+
+1. **On-Page SEO**  
+   - Using proper HTML structure (like headings and semantic tags)  
+   - Writing descriptive titles and meta descriptions  
+   - Including relevant keywords in content  
+   - Optimizing image alt text and internal links
+
+2. **Technical SEO**  
+   - Fast page loading speed  
+   - Mobile-friendliness  
+   - Clean URL structure  
+   - Secure connection (HTTPS)  
+   - Proper use of meta tags and robots.txt
+
+3. **Off-Page SEO**  
+   - Getting backlinks from other reputable websites  
+   - Social media mentions  
+   - Building site authority and trust
+
+4. **Content Quality**  
+   - Providing valuable, relevant, and original content  
+   - Using natural language that answers users' queries  
+   - Regularly updating content
+
+### Why SEO Matters:
+- **Increases visibility** in search engine results
+- **Drives free traffic** to websites
+- **Improves user experience**
+- **Builds credibility** and trust with audiences
+
+*** 3-_Text ***
+## HTML: Working with Text and Headings
+
+### 1. **Paragraphs (`<p>`)**
+- Used to display blocks of text.
+- Example:
+  -------------------code----------------------
+  <p>I love to teach you HTML.</p>
+  -------------------code----------------------
+
+---
+
+### 2. **Emphasis (`<em>`)**
+- Highlights important words or phrases.
+- Semantically indicates **emphasis**; default style is *italic*.
+- Helps search engines identify meaningful content.
+- Example:
+  -------------------code----------------------
+  <p>I love to teach you <em>HTML</em>.</p>
+  -------------------code----------------------
+
+> **Note**: Use `<em>` for meaning, not for styling. CSS should handle visual styles.
+
+#### Styling Emphasized Text (Optional Example)
+-------------------code----------------------
+<style>
+  em {
+    color: red;
+    font-style: normal;
+  }
+</style>
+-------------------code----------------------
+
+---
+
+### 3. **Strong (`<strong>`)**
+- Indicates **strong importance** or urgency.
+- Default style is **bold**.
+- Example:
+  -------------------code----------------------
+  <strong>Important</strong>
+  -------------------code----------------------
+
+---
+
+### 4. **Deprecated Tags**
+- `<i>`: Previously used for italic text. Now considered deprecated.
+- `<b>`: Previously used for bold text. Also deprecated.
+- **Do not use `<i>` or `<b>`** for styling; use CSS instead.
+
+---
+
+### 5. **VS Code Shortcut: Wrap with Abbreviation**
+- To quickly wrap a word in an HTML tag:
+  - Select the word
+  - Open Command Palette:  
+    - Mac: `Shift + Command + P`  
+    - Windows: `Shift + Ctrl + P`
+  - Search: **Wrap with Abbreviation**
+  - Enter the tag (e.g., `em`), press Enter
+
+---
+
+## HTML Headings: `<h1>` to `<h6>`
+
+### Purpose
+- Used to **structure content hierarchically**, not based on size.
+- **`<h1>`** = most important heading  
+- **`<h6>`** = least important heading
+
+### Rules
+- Each page should have **one and only one `<h1>`** tag.
+- Follow a **logical order**:
+  - `<h1>` → `<h2>` → `<h3>`, etc.
+  - Don’t skip levels just to change visual size (use CSS instead).
+
+### Example Structure
+-------------------code----------------------
+<h1>Web Development Tutorial</h1>
+
+<h2>HTML</h2>
+<p>HTML tutorial</p>
+
+<h3>Code</h3>
+<h3>Exercise</h3>
+
+<h2>CSS</h2>
+<p>CSS tutorial</p>
+-------------------code----------------------
+
+### Benefit
+- Proper heading structure improves **accessibility** and **SEO**.
+- Helps search engines understand the content hierarchy of the page.
+
+---
+
+### Summary
+- Use semantic tags like `<em>` and `<strong>` for meaning, not for style.
+- Avoid using deprecated tags like `<i>` and `<b>`.
+- Structure content with heading tags logically for better readability and SEO.

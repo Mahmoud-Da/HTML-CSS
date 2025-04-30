@@ -1,0 +1,84 @@
+encoding:
+文字コード
+二進法　→ 正数字　→ 文字
+01100001 -> 097 -> a
+
+UTF-8 標準（英語の文字や数字や区語など）
+Shift-JS (日本語（ひらがな、カタカナ、漢字、半角数字、などなど）)
+
+- Binary → Decimal is just number conversion (base-2 → base-10)
+- Decimal → Character is based on the encoding system (UTF-8, ASCII, etc.)
+- Binary by itself doesn’t "know" it’s supposed to be a letter — that’s what encodings define
+
+
+
+
+
+the encoding workflow:
+- **Decimal → Character** is determined by an encoding like **UTF-8**, **ASCII**, or **Unicode**.
+- But you're now asking:  
+  **How do we go from Binary → Decimal?**  
+  Is there some "rule" or "standard" for that part?
+
+---
+
+### Binary → Decimal is just *math*, not encoding
+
+The conversion from **Binary → Decimal (正数字)** is purely mathematical. It follows base-2 rules, and **has nothing to do with character encoding.**
+
+For example:
+
+| Binary       | Decimal | Explanation                          |
+|--------------|---------|--------------------------------------|
+| `00000001`   | 1       | 2⁰ = 1                               |
+| `00000101`   | 5       | 2² + 2⁰ = 4 + 1                      |
+| `01000001`   | 65      | 2⁶ + 2⁰ = 64 + 1                     |
+
+You're simply interpreting the binary string as a base-2 number. That part is **universal and always the same**.
+
+> So:  
+> **Binary → Decimal** = base-2 math  
+> **Decimal → Character** = depends on **encoding** (like UTF-8)
+
+---
+
+### Example in UTF-8
+
+Let's say you see this binary:
+
+```
+01000001
+```
+
+You:
+1. Convert to decimal:  
+   `01000001` = 65
+2. Look up 65 in ASCII or UTF-8:  
+   65 = `'A'`
+
+If you saw a different binary:
+```
+11100010 10000010 10101100
+```
+
+That's **not a single number**, but rather **three bytes** used in UTF-8. UTF-8 handles multibyte characters (like あ, é, 中, etc.) with **special rules**.
+
+So for UTF-8:
+- You must group binary correctly
+- Then decode based on UTF-8 patterns (1-byte, 2-byte, 3-byte, etc.)
+
+---
+
+### 🔚 Conclusion
+
+- **Binary → Decimal** is just number conversion (base-2 → base-10)
+- **Decimal → Character** is based on the **encoding system** (UTF-8, ASCII, etc.)
+- Binary by itself doesn’t "know" it’s supposed to be a letter — that’s what **encodings define**
+
+---
+
+
+SEO:
+S: search
+E: Engine
+O: optimizer

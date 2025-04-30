@@ -234,3 +234,86 @@ It is the practice of improving a website’s visibility and ranking in search e
 - Use semantic tags like `<em>` and `<strong>` for meaning, not for style.
 - Avoid using deprecated tags like `<i>` and `<b>`.
 - Structure content with heading tags logically for better readability and SEO.
+
+*** 4-_Entities ***
+
+## HTML Entities: Displaying Special Characters
+
+### 1. **Problem with Reserved Characters**
+- Some characters (like `<`, `>`, `&`) are **reserved in HTML** and cannot be used directly in content.
+- Example:
+  -------------------code----------------------
+  <p><HTML></p> <!-- This will be interpreted as a tag, not text -->
+  -------------------code----------------------
+- The browser hides the content because it thinks it's an invalid or unknown HTML element.
+
+---
+
+### 2. **Solution: HTML Entities**
+- **HTML entities** are used to display reserved/special characters.
+- Format: `&` + `entity_name` + `;`
+- Commonly used entities:
+  - `&lt;` → `<` (less than)
+  - `&gt;` → `>` (greater than)
+  - `&copy;` → © (copyright)
+  - `&nbsp;` → Non-breaking space
+
+#### Example:
+-------------------code----------------------
+<p>&lt;HTML&gt;</p>      <!-- Displays: <HTML> -->
+<p>&copy; 2025</p>     <!-- Displays: © 2025 -->
+-------------------code----------------------
+
+---
+
+### 3. **Viewing a Full List**
+- Full HTML entity reference can be found by Googling:  
+  **“HTML entities site:dev.w3.org”**
+- Example site: [dev.w3.org](https://dev.w3.org/html5/html-author/#character-references)
+
+> Note: You do **not need to memorize** most entities. Only a few are commonly used.
+
+---
+
+### 4. **Non-breaking Space (`&nbsp;`)**
+- Used to **prevent line breaks** between words.
+- Helpful when you want two words to **stay on the same line**, regardless of screen width.
+  
+#### Example:
+-------------------code----------------------
+<p>This&nbsp;is&nbsp;important.</p>
+-------------------code----------------------
+
+- This prevents words from breaking onto different lines.
+
+---
+
+### 5. **Generating Dummy Text in VS Code**
+- Type: `lorem50` + `Tab` to generate 50 words of dummy text.
+- Useful for testing layout and formatting.
+  
+#### Example:
+-------------------code----------------------
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+-------------------code----------------------
+
+---
+
+### 6. **Using Find and Replace for Special Cases**
+- To replace a space with a non-breaking space:
+  - Open search (`Ctrl + F` or `Cmd + F`)
+  - Find the target words
+  - Replace the regular space with `&nbsp;`
+
+---
+
+### Summary
+- Use **HTML entities** to display reserved or special characters.
+- Common ones:
+  - `&lt;` for `<`
+  - `&gt;` for `>`
+  - `&copy;` for ©
+  - `&nbsp;` to prevent line breaks
+- Avoid memorizing them—use references when needed.
+
+---

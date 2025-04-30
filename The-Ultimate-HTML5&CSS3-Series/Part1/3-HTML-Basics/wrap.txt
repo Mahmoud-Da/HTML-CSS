@@ -1,0 +1,32 @@
+*** 1-_Introduction ***
+## Web Development: HTML Essentials
+
+### Overview
+In this section, we will dive deeper into **HTML** and explore its essential elements. 
+This knowledge is crucial for building well-structured and accessible web pages.
+
+### Topics Covered
+- **Text Elements**  
+  Learn how to properly display and structure content using headings, paragraphs, and other text-based tags.
+
+- **Links**  
+  Understand the correct use of anchor (`<a>`) tags to navigate between pages and external resources.
+
+- **Images**  
+  Discover how to embed and optimize images using the `<img>` tag.
+
+- **Lists**  
+  Learn the differences and proper use of ordered (`<ol>`), unordered (`<ul>`), and description (`<dl>`) lists.
+
+- **Tables**  
+  Explore how to create data tables using `<table>`, `<tr>`, `<td>`, and other related elements.
+
+- **Containers**  
+  Use elements like `<div>` and `<span>` to group and style content.
+
+- **Structural and Semantic Elements**  
+  Understand the importance of semantic HTML tags such as `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`, and more to improve accessibility and SEO.
+
+### Key Point
+Even if you already know HTML basics, it’s highly recommended to go through this section thoroughly. Many developers misuse or overlook these elements, leading to poor structure and user experience.
+

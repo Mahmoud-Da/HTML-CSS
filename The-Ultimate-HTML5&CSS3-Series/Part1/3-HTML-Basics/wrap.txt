@@ -428,3 +428,112 @@ It is the practice of improving a website’s visibility and ranking in search e
 * **Hyperlink**: The clickable HTML element that leads to the link.
 * In practice, the terms are often used interchangeably.
 
+*** 6-_Images ***
+Here's a clean and well-organized summary of the lecture on **embedding and styling images in HTML**, formatted as lecture notes without using emojis:
+
+---
+
+## **Embedding Images in HTML**
+
+### **Finding and Using Images**
+
+* Use websites like [unsplash.com](https://unsplash.com) to find high-quality, free-to-use images.
+* Images are typically available in multiple sizes: small, medium, and large.
+* For responsive design, small images are preferred for mobile devices, and larger ones for desktop.
+* In this lesson, we use the **small** image version for simplicity.
+
+### **Organizing Image Files**
+
+* After downloading, move the image to the `images/` folder.
+* Rename it with a **descriptive name**, e.g., `coffee.jpg`.
+* Descriptive filenames improve **search engine optimization (SEO)**.
+
+### **Inserting an Image**
+
+-------------------code----------------------
+<img src="images/coffee.jpg" alt="A coffee mug on a table">
+-------------------code----------------------
+
+### **The `alt` Attribute**
+
+* Provides a **textual description** of the image.
+* Important for:
+
+  * **Accessibility**: Screen readers can read the alt text to visually impaired users.
+  * **SEO**: Helps search engines understand your content.
+  * **Fallback**: Displays text if the image fails to load.
+* **Avoid** generic descriptions like `"image"` or `"image1"`.
+
+### **Demonstrating a Fallback**
+
+* If the `src` is incorrect (e.g., typo), the browser displays the alt text.
+* This is useful when:
+
+  * There’s a typo in the filename.
+  * The network is down and the image can't load.
+
+---
+
+## **Styling Images with CSS**
+
+### **Basic Styling**
+
+Add a `<style>` block in the `<head>`:
+
+-------------------code----------------------
+<style>
+  img {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+-------------------code----------------------
+
+### **Problem: Image Distortion**
+
+* If the original image is **rectangular**, forcing it into a square shape (200x200) causes distortion.
+* Example: A round coffee mug appears vertically squashed.
+
+### **Inspecting the Issue**
+
+* Use **Chrome DevTools**:
+
+  * Right-click → Inspect.
+  * View applied styles.
+  * Toggle `height` to see how the image shape changes.
+
+### **Fixing Distortion with `object-fit`**
+
+-------------------code----------------------css
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+-------------------code----------------------
+
+* `object-fit: cover` resizes the image while preserving its aspect ratio and cropping it if needed.
+* The image completely covers its containing box.
+* This is a commonly used solution for background-like image behavior.
+
+### **Understanding the Containing Box**
+
+* Every HTML element is surrounded by an invisible box.
+* CSS styles are applied relative to this box.
+* In this example, the box is 200px by 200px.
+
+### **Trying Other `object-fit` Values**
+
+* Values include: `fill`, `contain`, `cover`, `none`, and `scale-down`.
+* Use browser dev tools to experiment with different values.
+* **Most common value:** `cover`.
+
+---
+
+## **Conclusion**
+
+* Embedding images properly involves both HTML (`<img>`) and CSS for layout and responsiveness.
+* The `alt` attribute is essential for accessibility and SEO.
+* Use `object-fit` to maintain image proportions and avoid distortion when resizing.
+
+

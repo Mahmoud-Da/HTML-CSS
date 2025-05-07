@@ -317,3 +317,114 @@ It is the practice of improving a website’s visibility and ranking in search e
 - Avoid memorizing them—use references when needed.
 
 ---
+
+*** 5-_Hyperlinks ***
+### **HTML Links (Anchor Tags) - Lecture Summary**
+
+#### **1. Creating Basic Links**
+
+* The `<a>` (anchor) element is used to create links.
+* Use the `href` attribute to specify the link destination.
+* `href` stands for "Hypertext Reference", and it typically contains a **URL**.
+
+#### **2. Linking to Another HTML Page**
+
+* Example: Link from `index.html` to `about.html` using a **relative URL**.
+
+  -------------------code----------------------
+  <a href="about.html">About Me</a>
+  -------------------code----------------------
+
+#### **3. Relative vs. Absolute URLs**
+
+* **Relative URL**: Relative to the current file location.
+
+  * If `about.html` is inside a folder `company/`:
+
+    -------------------code----------------------
+    <a href="company/about.html">About Me</a>
+    -------------------code----------------------
+* **Absolute URL**: Starts from the root of the site.
+
+  -------------------code----------------------
+  <a href="/company/about.html">About Me</a>
+  -------------------code----------------------
+
+#### **4. Using Images as Links**
+
+* Replace link text with an image:
+
+  -------------------code----------------------
+  <a href="images/mosh.jpg"><img src="images/mosh.jpg"></a>
+  -------------------code----------------------
+* Can use CSS to resize large images.
+
+#### **5. Navigating Back Using Relative Paths**
+
+* To go back from a subfolder:
+
+  -------------------code----------------------
+  <a href="../index.html">Homepage</a>
+  -------------------code----------------------
+* `..` navigates one level up in the folder hierarchy.
+* Repeat `../` to go multiple levels up if needed.
+
+#### **6. Downloading Files**
+
+* Add the `download` attribute to trigger download:
+
+  -------------------code----------------------
+  <a href="images/mosh.jpg" download>My Photo</a>
+  -------------------code----------------------
+
+#### **7. Linking to Sections of the Same Page (Fragments)**
+
+* Give the target element an `id`:
+
+  -------------------code----------------------
+  <h2 id="section-css">CSS</h2>
+  -------------------code----------------------
+* Link to it using a hash `#`:
+
+  -------------------code----------------------
+  <a href="#section-css">CSS</a>
+  -------------------code----------------------
+
+#### **8. Back to Top Link**
+
+* Use an empty fragment to scroll to the top:
+
+  -------------------code----------------------
+  <a href="#">Jump to Top</a>
+  -------------------code----------------------
+
+#### **9. Linking to External Websites**
+
+* Must include the full URL with protocol:
+
+  -------------------code----------------------
+  <a href="https://google.com">Google</a>
+  -------------------code----------------------
+
+#### **10. Opening Links in a New Tab**
+
+* Add `target="_blank"`:
+
+  -------------------code----------------------
+  <a href="https://google.com" target="_blank">Google</a>
+  -------------------code----------------------
+
+#### **11. Linking to an Email Address**
+
+* Use the `mailto:` protocol:
+
+  -------------------code----------------------
+  <a href="mailto:programmingwithmosh@gmail.com">Email Me</a>
+  -------------------code----------------------
+
+#### **12. Link vs. Hyperlink**
+
+* **Link**: The address/URL itself.
+* **Hyperlink**: The clickable HTML element that leads to the link.
+* In practice, the terms are often used interchangeably.
+

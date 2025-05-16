@@ -1006,3 +1006,193 @@ Save this as an `.html` file (e.g., `media_example.html`). Create `videos` and `
     *   The next topic to be discussed is "tables."
 
 ---
+
+*** 9-_Tables ***
+**Lecture Notes: HTML Tables**
+
+**I. Introduction to Tables (`<table>`)**
+    *   **Purpose:** The `<table>` element is used for representing tabular data (data organized in rows and columns).
+    *   **Historical Misuse:** In the past, tables were sometimes used for page layout. This is now considered bad practice. Modern layout techniques (e.g., Flexbox, Grid) are preferred and will be covered later.
+    *   **Core Principle:** Use tables *only* for displaying data that naturally fits a table structure.
+
+**II. Basic Table Structure**
+    *   **Table Rows (`<tr>`):**
+        *   A table consists of one or more rows.
+        *   Each row is defined by the `<tr>` (table row) element.
+    *   **Table Cells:**
+        *   Within each row, there are one or more cells.
+        *   **Data Cells (`<td>`):**
+            *   Defined by the `<td>` (table data) element.
+            *   Contain the actual data of the table.
+        *   **Header Cells (`<th>`):**
+            *   Defined by the `<th>` (table header) element.
+            *   Typically used for the cells in the first row (or first column) to provide labels or titles for the columns/rows.
+            *   By default, text in `<th>` is usually bold and centered.
+
+    **HTML Example: Basic Table**
+    -------------------code----------------------
+    <table>
+        <tr> <!-- First row -->
+            <td>Marketing</td> <!-- First cell (data) -->
+            <td>$100</td>      <!-- Second cell (data) -->
+        </tr>
+        <tr> <!-- Second row -->
+            <td>Accounting</td>
+            <td>$200</td>
+        </tr>
+    </table>
+    -------------------code----------------------
+    *   **Zen Coding (Emmet) Tip for Rows with Data Cells:** `tr>td*2` (creates a row with two data cells)
+
+**III. Styling Tables with CSS**
+    *   **Default Appearance:** By default, HTML tables have minimal styling (no borders, etc.).
+    *   **Adding Borders:**
+        *   Use the `border` CSS property.
+        *   Syntax: `border: <thickness> <style> <color>;` (e.g., `border: 1px solid gray;`)
+        *   **Applying to Table and Cells:** To apply borders to both the table and its cells, group selectors:
+            -------------------code----------------------
+            table, td, th { /* Apply to table, td, and th elements */
+                border: 1px solid gray;
+            }
+            -------------------code----------------------
+            *   This follows the **DRY (Don't Repeat Yourself)** principle to avoid code duplication.
+    *   **Collapsing Borders:**
+        *   By default, cells have individual borders, creating a "double border" effect or spacing.
+        *   Use `border-collapse: collapse;` on the `table` element to merge adjacent cell borders into a single border.
+            -------------------code----------------------
+            table {
+                border-collapse: collapse;
+            }
+            -------------------code----------------------
+    *   **Adding Cell Padding:**
+        *   To create space between cell content and its border, use the `padding` property on `td` and `th` elements.
+            -------------------code----------------------
+            td, th {
+                padding: 5px;
+            }
+            -------------------code----------------------
+
+**IV. Adding Table Headers (`<th>`)**
+    *   Headers provide context for the data in columns or rows.
+    *   **HTML Example: Table with Headers**
+        -------------------code----------------------
+        <table>
+            <tr>
+                <th>Category</th> <!-- Header cell -->
+                <th>Amount</th>   <!-- Header cell -->
+            </tr>
+            <tr>
+                <td>Marketing</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Accounting</td>
+                <td>$200</td>
+            </tr>
+        </table>
+        -------------------code----------------------
+    *   **Zen Coding (Emmet) Tip for Rows with Header Cells:** `tr>th*2`
+    *   **Styling Note:** Remember to include `th` in CSS rules for borders and padding if you want them styled consistently with `td` elements.
+
+**V. Semantic Table Structure (Improving Meaning)**
+    *   To make tables more meaningful for search engines and assistive technologies (like screen readers), use semantic grouping elements:
+        *   **`<thead>` (Table Head):**
+            *   Groups the header content of the table.
+            *   Contains one or more `<tr>` elements that define the table header (usually with `<th>` cells).
+        *   **`<tbody>` (Table Body):**
+            *   Groups the main data content of the table.
+            *   Contains one or more `<tr>` elements with the table's data (usually with `<td>` cells).
+        *   **`<tfoot>` (Table Foot):**
+            *   Groups the footer content of the table.
+            *   Contains one or more `<tr>` elements, often used for summaries or totals.
+            *   Optional.
+
+    **HTML Example: Semantic Table Structure**
+    -------------------code----------------------
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Marketing</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Accounting</td>
+                <td>$200</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th>$300</th>
+            </tr>
+        </tfoot>
+    </table>
+    -------------------code----------------------
+    *   **Benefit:** This structure is called **Semantic HTML** because it adds meaning to the markup, making it more understandable for machines. The visual output remains the same, but the underlying structure is improved.
+    *   **Keyboard Shortcut (Editor Tip):**
+        *   Hold `Shift` + `Up/Down Arrow` to select multiple lines.
+        *   Hold `Alt` (or `Option` on Mac) + `Up/Down Arrow` to move selected lines of code.
+
+**VI. Spanning Columns and Rows**
+    *   **`colspan` Attribute (for `<th>` or `<td>`):**
+        *   Allows a cell to span across multiple columns.
+        *   The value is the number of columns the cell should occupy.
+        *   Example: `<th colspan="2">Expenses</th>` (This header cell will span two columns).
+    *   **`rowspan` Attribute (for `<th>` or `<td>`):** (Not explicitly covered in detail in this segment, but a related concept)
+        *   Allows a cell to span across multiple rows.
+
+    **HTML Example: `colspan`**
+    -------------------code----------------------
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Expenses</th> <!-- Spans 2 columns -->
+            </tr>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Marketing</td>
+                <td>$100</td>
+            </tr>
+        </tbody>
+    </table>
+    -------------------code----------------------
+
+**VII. Styling Differences: `<th>` vs. `<td>`**
+    *   **Default `<th>` Styling:**
+        *   Text is typically **bold**.
+        *   Text is typically **center-aligned**.
+    *   **Default `<td>` Styling:**
+        *   Text is typically normal weight.
+        *   Text is typically **left-aligned**.
+    *   **Overriding Alignment:**
+        *   Use the `text-align` CSS property to change alignment.
+        *   Example: To left-align text in the `<tfoot>`:
+            -------------------code----------------------
+            tfoot {
+                text-align: left; /* Affects all cells within the tfoot */
+            }
+            /* Or more specifically for cells within tfoot: */
+            tfoot th, tfoot td {
+                text-align: left;
+            }
+            -------------------code----------------------
+
+**VIII. Summary**
+    *   Use `<table>` for tabular data only.
+    *   Structure tables with `<tr>` (rows), `<td>` (data cells), and `<th>` (header cells).
+    *   Enhance semantics with `<thead>`, `<tbody>`, and `<tfoot>`.
+    *   Style tables using CSS for borders, padding, alignment, etc.
+    *   Use `colspan` (and `rowspan`) for cells that need to span multiple columns (or rows).
+
+---

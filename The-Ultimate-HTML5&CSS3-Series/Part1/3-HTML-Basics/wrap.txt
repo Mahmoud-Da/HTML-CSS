@@ -537,3 +537,330 @@ img {
 * Use `object-fit` to maintain image proportions and avoid distortion when resizing.
 
 
+*** 7-_Video_and_Audio ***
+**Lecture Notes: Embedding Video and Audio in HTML5**
+
+**I. Introduction**
+    *   HTML5 offers strong support for embedding video and audio.
+    *   **Real-world Example:** Sketch.com features a video showcasing its tool.
+        *   Initially, this example video might lack control buttons (play/pause).
+        *   These controls can be easily added.
+
+**II. Acquiring Media Assets**
+    *   **Source:** Pexels.com - a website for free photos and videos.
+    *   **Process:**
+        1.  Search for media (e.g., "ocean").
+        2.  Filter by "videos."
+        3.  Select a video.
+        4.  **Download Considerations:**
+            *   Choose an appropriate size (e.g., HD version, which is smaller than full resolution).
+            *   **Reason:** Avoid large files to prevent poor user experience on slow connections. Download the smallest practical version.
+        5.  **Attribution:** Acknowledge the creator (e.g., "Ruvim" or "Ravim"). Consider donations.
+    *   **File Organization:**
+        1.  In your project, create a new folder (e.g., `videos`).
+        2.  Move the downloaded video into this folder.
+        3.  Rename the video file to something descriptive (e.g., `ocean.mp4`).
+
+**III. Embedding Video with the `<video>` Element**
+    *   **HTML Tag:** `<video>`
+    *   **`src` Attribute:**
+        *   Similar to the `<img>` element's `src` attribute.
+        *   Set to the path of the video file (e.g., `videos/ocean.mp4`).
+        *   Can use relative URLs or absolute URLs (starting with `/`).
+    *   **Default Behavior:**
+        *   Displays the first frame of the video as a static image.
+        *   Renders at the video's full size, which can cause layout issues (e.g., horizontal scrolling).
+
+    **Code Example: Basic Video Embedding**
+    -------------------code----------------------html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Embedding Example</title>
+        <style>
+            /* We'll add styling later */
+        </style>
+    </head>
+    <body>
+        <h1>My Awesome Video</h1>
+        <!-- 
+            Assuming you have a 'videos' folder at the same level as this HTML file,
+            and inside 'videos' there's a file named 'ocean.mp4'.
+            Replace 'videos/ocean.mp4' with your actual video path.
+        -->
+        <video src="videos/placeholder-video.mp4"></video>
+        <p>Content after the video.</p>
+    </body>
+    </html>
+    -------------------code----------------------
+
+    *   **Styling with CSS:**
+        *   Add a `<style>` element in the `<head>` or use an external stylesheet.
+        *   Set the `width` property for the `video` element (e.g., `video { width: 400px; }`).
+        *   The browser automatically calculates the `height` based on the video's aspect ratio.
+
+    **Code Example: Styling the Video**
+    -------------------code----------------------html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Styled Video Example</title>
+        <style>
+            video {
+                width: 400px; /* Set a fixed width */
+                /* The browser will maintain the aspect ratio for height */
+                border: 2px solid #333; /* Optional: to see the video element's bounds */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Styled Video</h1>
+        <video src="videos/placeholder-video.mp4"></video>
+        <p>The video above is now 400px wide.</p>
+    </body>
+    </html>
+    -------------------code----------------------
+
+**IV. Video Attributes**
+    *   **`controls` Attribute:**
+        *   Adds default browser control buttons (play, pause, volume, fullscreen, etc.).
+        *   This is a **boolean attribute**.
+
+    **Code Example: Adding Controls**
+    -------------------code----------------------html
+    <video src="videos/placeholder-video.mp4" controls></video>
+    -------------------code----------------------
+
+    *   **Understanding Boolean Attributes in HTML:**
+        *   **Misconception:** Setting them to `true` or `false` (e.g., `controls="false"`).
+        *   **Correct Behavior:**
+            *   The *presence* of a boolean attribute implies a "true" value.
+            *   The *absence* of the attribute implies a "false" value.
+            *   Setting it to `controls="false"` will still show the controls because the attribute is present.
+            *   To show controls, simply add the attribute: `<video src="..." controls>`. The value assigned is irrelevant.
+
+    **Code Example: Boolean Attributes Demonstration**
+    -------------------code----------------------html
+    <h2>Boolean Attribute Examples</h2>
+
+    <p>Video with controls (attribute present):</p>
+    <video src="videos/placeholder-video.mp4" controls style="width:300px;"></video>
+
+    <p>Video with controls="controls" (attribute present, value is common but not strictly necessary):</p>
+    <video src="videos/placeholder-video.mp4" controls="controls" style="width:300px;"></video>
+
+    <p>Video with controls="false" (attribute is STILL PRESENT, so controls will show!):</p>
+    <video src="videos/placeholder-video.mp4" controls="false" style="width:300px;"></video>
+
+    <p>Video WITHOUT controls (attribute absent):</p>
+    <video src="videos/placeholder-video.mp4" style="width:300px;"></video>
+    -------------------code----------------------
+
+    *   **`autoplay` Attribute:**
+        *   A boolean attribute.
+        *   If present, the video automatically starts playing when the page loads.
+        *   **Note:** Many browsers now restrict autoplay with sound unless the user has interacted with the page, or the video is muted. Add the `muted` attribute for more reliable autoplay: `autoplay muted`.
+        *   Example: The video on sketch.com.
+
+    **Code Example: Autoplay (often requires `muted`)**
+    -------------------code----------------------html
+    <video src="videos/placeholder-video.mp4" controls autoplay muted style="width:300px;"></video>
+    -------------------code----------------------
+
+    *   **`loop` Attribute:**
+        *   A boolean attribute.
+        *   If present, the video will automatically restart (loop) when it finishes.
+
+    **Code Example: Looping Video**
+    -------------------code----------------------html
+    <video src="videos/placeholder-video.mp4" controls loop style="width:300px;"></video>
+    -------------------code----------------------
+
+    **Code Example: Combining Attributes**
+    -------------------code----------------------html
+    <video src="videos/placeholder-video.mp4" controls autoplay muted loop style="width:300px;"></video>
+    -------------------code----------------------
+
+**V. Browser Compatibility and Fallbacks**
+    *   **Tool for Checking:** caniuse.com - shows browser support for HTML/CSS features.
+    *   **Support for `<video>` element:**
+        *   "Video tracks" (for subtitles) have less widespread support.
+        *   The `<video>` element itself has excellent support across modern browsers.
+        *   Very old browsers (e.g., Firefox 2/3, 2006-2008) lack support, but their usage is negligible (e.g., 0.01%).
+        *   **Notable Exception:** Opera Mini (released 2015, ~0.88% usage) does *not* support the `<video>` element.
+    *   **Providing Fallback Content:**
+        *   It's a best practice to provide content for browsers that don't support the `<video>` element.
+        *   Place text or other HTML *inside* the opening and closing `<video>` tags.
+        *   Example: `<video src="..."><p>Your browser doesn't support videos.</p></video>`
+        *   This content will only be displayed if the browser doesn't recognize the `<video>` tag.
+
+    **Code Example: Fallback Content**
+    -------------------code----------------------html
+    <video src="videos/placeholder-video.mp4" controls style="width:300px;">
+        <p>
+            Sorry, your browser doesn't support embedded videos.
+            You can <a href="videos/placeholder-video.mp4">download the video</a> instead.
+        </p>
+    </video>
+    -------------------code----------------------
+
+**VI. Embedding Audio with the `<audio>` Element**
+    *   **HTML Tag:** `<audio>`
+    *   Functionality is "exactly like the video element."
+    *   Uses the `src` attribute to specify the audio file.
+    *   Supports the same boolean attributes (`controls`, `autoplay`, `loop`).
+    *   Unlike video, audio doesn't have a visual dimension, so it won't display anything unless `controls` are added.
+
+    **Code Example: Embedding Audio**
+    -------------------code----------------------html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audio Embedding Example</title>
+    </head>
+    <body>
+        <h1>My Awesome Audio</h1>
+
+        <p>Audio without controls (won't be visible or playable by default UI):</p>
+        <!-- Replace 'audio/placeholder-audio.mp3' with your actual audio file path. -->
+        <audio src="audio/placeholder-audio.mp3"></audio>
+
+        <p>Audio with controls:</p>
+        <audio src="audio/placeholder-audio.mp3" controls></audio>
+
+        <p>Audio with controls, autoplay (may be restricted by browser), and loop:</p>
+        <audio src="audio/placeholder-audio.mp3" controls autoplay loop></audio>
+        <!-- Note: Autoplay for audio is also often restricted by browsers. -->
+
+        <p>Audio with fallback content:</p>
+        <audio src="audio/placeholder-audio.mp3" controls>
+            <p>
+                Your browser does not support the audio element.
+                You can <a href="audio/placeholder-audio.mp3">download the audio</a>.
+            </p>
+        </audio>
+
+    </body>
+    </html>
+    -------------------code----------------------
+
+**VII. Conclusion & Next Steps**
+    *   This covers the essentials of embedding video and audio.
+    *   The next topic to be discussed is "lists."
+
+---
+
+**Complete HTML File Example (incorporating many features):**
+
+Save this as an `.html` file (e.g., `media_example.html`). Create `videos` and `audio` folders in the same directory as this HTML file, and place your media files (e.g., `placeholder-video.mp4`, `placeholder-audio.mp3`) inside them.
+
+-------------------code----------------------html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Media Embedding</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .video-container, .audio-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        video {
+            max-width: 100%; /* Make video responsive */
+            height: auto;   /* Maintain aspect ratio */
+            display: block; /* Remove extra space below */
+            margin-bottom: 10px;
+        }
+        /* Specific width for demonstration if needed, overrides max-width */
+        .fixed-width-video {
+            width: 450px; 
+        }
+        audio {
+            width: 100%; /* Make audio controls responsive */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Embedding Video and Audio in HTML5</h1>
+
+    <div class="video-container">
+        <h2>III. Embedding Video with the <code>&lt;video&gt;</code> Element</h2>
+        
+        <p><strong>Basic Video (first frame, no controls, original size unless styled):</strong></p>
+        <!-- Note: Without controls or styling, this might be very large or small -->
+        <video src="videos/placeholder-video.mp4"></video> 
+        
+        <p><strong>Styled Video (450px width, no controls):</strong></p>
+        <video src="videos/placeholder-video.mp4" class="fixed-width-video"></video>
+    </div>
+
+    <div class="video-container">
+        <h2>IV. Video Attributes</h2>
+
+        <p><strong>Video with <code>controls</code>:</strong></p>
+        <video src="videos/placeholder-video.mp4" controls class="fixed-width-video"></video>
+
+        <p><strong>Video with <code>controls</code>, <code>autoplay</code> (muted for reliability), and <code>loop</code>:</strong></p>
+        <video src="videos/placeholder-video.mp4" controls autoplay muted loop class="fixed-width-video"></video>
+        
+        <p><strong>Understanding Boolean Attributes:</strong> <code>controls="false"</code> still shows controls because the attribute is present.</p>
+        <video src="videos/placeholder-video.mp4" controls="false" class="fixed-width-video"></video>
+    </div>
+
+    <div class="video-container">
+        <h2>V. Browser Compatibility and Fallbacks</h2>
+        <p><strong>Video with Fallback Content:</strong> (Will show if browser doesn't support <code>&lt;video&gt;</code>)</p>
+        <video src="videos/placeholder-video.mp4" controls class="fixed-width-video">
+            <p>
+                Sorry, your browser doesn't support embedded videos.
+                You can <a href="videos/placeholder-video.mp4">download the video here</a>.
+            </p>
+        </video>
+    </div>
+
+    <div class="audio-container">
+        <h2>VI. Embedding Audio with the <code>&lt;audio&gt;</code> Element</h2>
+        
+        <p><strong>Basic Audio (invisible without <code>controls</code>):</strong></p>
+        <audio src="audio/placeholder-audio.mp3"></audio>
+        
+        <p><strong>Audio with <code>controls</code>:</strong></p>
+        <audio src="audio/placeholder-audio.mp3" controls></audio>
+
+        <p><strong>Audio with <code>controls</code>, <code>autoplay</code> (often restricted), and <code>loop</code>:</strong></p>
+        <audio src="audio/placeholder-audio.mp3" controls autoplay loop></audio>
+        
+        <p><strong>Audio with Fallback Content:</strong></p>
+        <audio src="audio/placeholder-audio.mp3" controls>
+            <p>
+                Your browser does not support the audio element.
+                You can <a href="audio/placeholder-audio.mp3">download the audio here</a>.
+            </p>
+        </audio>
+    </div>
+
+    <p><strong>VII. Conclusion & Next Steps:</strong> The next topic is lists.</p>
+
+</body>
+</html>
+-------------------code----------------------
+

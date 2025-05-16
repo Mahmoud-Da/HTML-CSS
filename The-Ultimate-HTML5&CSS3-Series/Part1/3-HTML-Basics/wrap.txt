@@ -1292,3 +1292,113 @@ Save this as an `.html` file (e.g., `media_example.html`). Create `videos` and `
     *   HTML5 introduces more descriptive (semantic) container elements beyond `<div>` and `<span>`. These will be discussed next.
 
 ---
+
+*** 11-_Semantic_Elements ***
+Okay, here are the organized lecture notes for "Semantic HTML Elements (Part 1)".
+
+---
+
+**Lecture Notes: Semantic HTML Elements (Part 1)**
+
+**I. Introduction to Semantic HTML**
+    *   **Recap:** `<div>` and `<span>` are general-purpose containers.
+    *   **HTML5 Enhancement:** HTML5 introduced more descriptive (meaningful) container elements, known as **semantic elements**.
+    *   **Purpose of Semantic Elements:**
+        *   To provide a clearer structure and meaning to the content of a webpage.
+        *   Helps search engines (like Google) better understand the page content and its organization.
+        *   Improves accessibility for users relying on assistive technologies (e.g., screen readers).
+    *   **Recommendation:** Wherever possible, use specific semantic elements instead of generic `<div>`s and `<span>`s. While many existing web pages heavily use `div`s and `span`s, using semantic elements is the recommended practice moving forward.
+
+**II. The `<article>` Element**
+    *   **Purpose:** Represents an independent, self-contained piece of content that could, in principle, be distributed or reused on its own.
+    *   **Analogy:** Think of it as something that could be syndicated (like an RSS feed item).
+    *   **Examples:**
+        *   Blog post
+        *   Newspaper article
+        *   Forum post
+        *   User-submitted comment
+        *   Product review
+        *   Product card (e.g., on an e-commerce site showcasing multiple products – each product could be an `<article>`)
+    *   **Replacing `<div>`:** Instead of `<div class="article">` or `<div class="post">`, use `<article>`.
+        -------------------code----------------------
+        <!-- Old way (less semantic) -->
+        <!--
+        <div class="article">
+            <h1>My Blog Post Title</h1>
+            <p>Some content here...</p>
+        </div>
+        -->
+
+        <!-- New way (more semantic) -->
+        <article>
+            <h1>My Blog Post Title</h1>
+            <p>Some content here...</p>
+            <!-- More content like images, figures, etc. -->
+        </article>
+        -------------------code----------------------
+    *   **Key Idea:** An `<article>` should make sense on its own, even if taken out of the context of the rest of the page.
+
+**III. The `<figure>` and `<figcaption>` Elements**
+    *   **`<figure>` Element:**
+        *   **Purpose:** Represents a unit of content, typically an image, illustration, diagram, code snippet, or similar, that is referenced in the main flow of the document but can be moved to another part of the page or to an appendix without affecting the main flow.
+        *   It's a container specifically for "figures."
+        *   Often used to wrap `<img>` elements, tables, lists, etc., that act as figures.
+        *   Has no inherent visual characteristics by itself; it's a semantic wrapper.
+        *   **VS Code Tip:** Use the command palette (Ctrl+Shift+P or Cmd+Shift+P) and search for "Wrap with abbreviation" or "Emmet: Wrap with Abbreviation" to wrap selected elements (e.g., wrap an `<img>` with `<figure>`).
+    *   **`<figcaption>` Element:**
+        *   **Purpose:** Provides a caption or legend for its parent `<figure>` element.
+        *   Can be placed either before or after the content within the `<figure>`.
+        *   **Editor Note:** At the time of the lecture recording, VS Code might not have had full Emmet support for `<figcaption>`, requiring manual typing of the tags.
+        -------------------code----------------------
+        <article>
+            <h1>My Trip</h1>
+            <p>I saw many wonderful sights...</p>
+            <figure>
+                <img src="images/my-coffee.jpg" alt="A cup of coffee">
+                <figcaption>My coffee this morning.</figcaption>
+            </figure>
+            <p>...and the coffee was great!</p>
+        </article>
+        -------------------code----------------------
+
+**IV. The `<mark>` Element**
+    *   **Purpose:** Represents text that is marked or highlighted for reference or notation purposes, due to its relevance in another context.
+    *   **Analogy:** Like using a highlighter pen on a physical document.
+    *   **Default Styling:** Browsers typically render text within `<mark>` tags with a yellow background. This is a default style and doesn't require explicit CSS for the basic effect.
+    *   **Semantic Alternative to `<span class="highlight">`:** Instead of creating a custom class for highlighting, use `<mark>` when the intent is to "mark" text.
+        -------------------code----------------------
+        <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipiscing elit.</p>
+        -------------------code----------------------
+
+**V. The `<time>` Element**
+    *   **Purpose:** Represents a specific period in time or a date. It can be used to mark up dates, times, or durations.
+    *   **Semantic Benefit:** Makes dates and times machine-readable, which can be beneficial for search engines, calendar applications, etc.
+    *   **Visual Appearance:** By default, text within a `<time>` element looks like normal text. Its value is primarily semantic.
+    *   **`datetime` Attribute (Optional but Recommended):**
+        *   Provides a machine-readable version of the date/time.
+        *   This helps browsers and search engines understand the precise date and time, regardless of how it's formatted for human readers.
+        *   **Format:**
+            *   Date: `YYYY-MM-DD` (e.g., `2021-01-01`)
+            *   Date and Time: `YYYY-MM-DD HH:MM` (24-hour format) (e.g., `2021-01-01 17:00`)
+            *   Other formats exist for durations, time-zone offsets, etc.
+        *   **Editor Note:** At the time of the lecture recording, VS Code might not have had full Emmet support for `<time>`, requiring manual typing.
+        -------------------code----------------------
+        <article>
+            <h1>Important Announcement</h1>
+            <p>
+                Published on 
+                <time datetime="2021-01-01T17:00">January 1st, 2021, at 5 pm</time>.
+            </p>
+            <p>The event will take place soon...</p>
+        </article>
+        -------------------code----------------------
+        *(Note: The `T` separator between date and time is common in ISO 8601 format, which `datetime` often follows).*
+
+**VI. Importance of Semantic HTML**
+    *   Using elements like `<article>`, `<figure>`, `<mark>`, and `<time>` (instead of just `<div>`s and `<span>`s) makes HTML markup more descriptive and meaningful.
+    *   This significantly improves how search engines interpret the content and aids accessibility.
+
+**VII. Next Steps**
+    *   More semantic elements will be covered in the next lesson.
+
+---

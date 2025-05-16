@@ -864,3 +864,145 @@ Save this as an `.html` file (e.g., `media_example.html`). Create `videos` and `
 </html>
 -------------------code----------------------
 
+*** 8-_Lists ***
+**Lecture Notes: HTML Lists**
+
+**I. Introduction to HTML Lists**
+    *   HTML provides three main types of list elements for structuring content.
+    *   Focus of this section: HTML for structure; styling (CSS) will be covered later.
+
+**II. Unordered Lists (`<ul>`)**
+    *   **Definition:** `<ul>` stands for "unordered list."
+    *   **Purpose:** Used when the order of items does *not* matter.
+    *   **HTML Structure:**
+        *   The list is defined by the `<ul>` element.
+        *   Each item within the list is defined by an `<li>` (list item) element.
+        -------------------code----------------------
+        <ul>
+            <li>About Me</li>
+            <li>Courses</li>
+            <li>Subscribe</li>
+            <li>Contact Me</li>
+        </ul>
+        -------------------code----------------------
+    *   **Common Use Cases:**
+        *   Navigation menus (very common application).
+        *   Listing images.
+        *   Products in a shopping cart.
+        *   Any collection of items where sequence isn't critical.
+    *   **Default Appearance & Styling:**
+        *   By default, list items are displayed with bullet points.
+        *   The appearance of these bullet points (or their absence) is controlled by CSS.
+        *   **CSS Property:** `list-style-type`
+            *   `list-style-type: square;` (changes bullets to squares)
+            *   `list-style-type: none;` (removes bullet points)
+        -------------------code----------------------css
+        /* Example CSS */
+        ul {
+            list-style-type: square; /* or none, circle, disc (default), etc. */
+        }
+        -------------------code----------------------
+        *   CSS can also be used to lay out lists horizontally (e.g., for navigation bars), which will be covered later.
+    *   **Nesting Lists:**
+        *   Unordered lists can be nested within other list items to create a hierarchy.
+        *   Example: A "Courses" list item containing another `<ul>` for specific course names.
+        -------------------code----------------------
+        <ul>
+            <li>About Me</li>
+            <li>Courses
+                <ul> <!-- Nested UL -->
+                    <li>HTML</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                </ul>
+            </li>
+            <li>Subscribe</li>
+            <li>Contact Me</li>
+        </ul>
+        -------------------code----------------------
+    *   **Zen Coding (Emmet) Tip:**
+        *   To quickly generate multiple list items: type `li*3` and press `Tab`.
+        *   This creates:
+            -------------------code----------------------
+            <li></li>
+            <li></li>
+            <li></li>
+            -------------------code----------------------
+
+**III. Ordered Lists (`<ol>`)**
+    *   **Definition:** `<ol>` stands for "ordered list."
+    *   **Purpose:** Used when the order of items *does* matter. Changing the order can change the meaning.
+    *   **HTML Structure:**
+        *   The list is defined by the `<ol>` element.
+        *   Each item within the list is defined by an `<li>` element.
+    *   **Example (Recipe Steps):**
+        -------------------code----------------------
+        <ol>
+            <li>Preheat the oven.</li>
+            <li>Place the ingredients on the crust.</li>
+            <li>Put the pizza in the oven for 20 minutes.</li>
+        </ol>
+        -------------------code----------------------
+    *   **Default Appearance:**
+        *   List items are typically displayed with numbers (1, 2, 3...).
+    *   **Zen Coding (Emmet) Tip:**
+        *   To quickly generate an ordered list with items: type `ol>li*3` and press `Tab`.
+        *   This creates:
+            -------------------code----------------------
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            -------------------code----------------------
+
+**IV. Description Lists (`<dl>`)**
+    *   **Definition:** `<dl>` stands for "description list."
+    *   **Purpose:** Used for implementing glossaries or displaying metadata, where you have terms and their corresponding descriptions/details.
+    *   **HTML Structure:**
+        *   The list is defined by the `<dl>` element.
+        *   Inside the `<dl>`, you have pairs (or groups) of:
+            *   `<dt>`: Description Term (the word or phrase being defined/described).
+            *   `<dd>`: Description Details (the definition or details for the preceding term).
+    *   **Example 1: Glossary**
+        -------------------code----------------------
+        <dl>
+            <dt>HTML</dt>
+            <dd>Hypertext Markup Language</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+        </dl>
+        -------------------code----------------------
+    *   **Example 2: Metadata (Course Information)**
+        *   A single `<dt>` can be followed by multiple `<dd>` elements if there are multiple details for one term.
+        -------------------code----------------------
+        <dl>
+            <dt>Title</dt>
+            <dd>The Ultimate HTML and CSS Course</dd>
+
+            <dt>Author</dt>
+            <dd>Mosh Hamedani</dd>
+
+            <dt>Skills</dt>
+            <dd>HTML</dd>
+            <dd>CSS</dd>
+            <dd>Responsive Design</dd>
+            <dd>Search Engine Optimization</dd>
+        </dl>
+        -------------------code----------------------
+        *   **Zen Coding (Emmet) Tip:** `dd*3` for multiple description details.
+    *   **Default Appearance & Styling:**
+        *   Terms (`<dt>`) and details (`<dd>`) are typically displayed on separate lines, with details often indented.
+        *   CSS can be used to customize the appearance (e.g., make terms bold, add padding).
+
+**V. Summary & Key Takeaways**
+    *   `<ul>`: For lists where item order is not important (bullet points by default).
+    *   `<ol>`: For lists where item order is crucial (numbered by default).
+    *   `<dl>`: For term/definition pairs or metadata (terms and their details).
+    *   HTML provides the structure; CSS controls the presentation.
+    *   Zen Coding (Emmet) can significantly speed up HTML writing.
+
+**VI. Next Steps**
+    *   The next topic to be discussed is "tables."
+
+---

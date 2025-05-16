@@ -1196,3 +1196,99 @@ Save this as an `.html` file (e.g., `media_example.html`). Create `videos` and `
     *   Use `colspan` (and `rowspan`) for cells that need to span multiple columns (or rows).
 
 ---
+
+*** 10-_Containers ***
+**Lecture Notes: Grouping Elements (Containers) - `<div>` and `<span>`**
+
+**I. Introduction to Containers**
+    *   **Purpose:** Often, we need to group multiple HTML elements together, primarily for styling or layout purposes. These groups are called containers.
+    *   **Real-world Examples (adobe.com):**
+        *   **Navigation Bar:** Contains an image (logo) and menu items.
+        *   **Hero Unit:** Contains a background image, heading, text, and links.
+        *   Other sections on a webpage are also often grouped within containers.
+
+**II. The `<div>` (Division) Element**
+    *   **Definition:** `<div>` is the most commonly used generic container element.
+    *   **Visual Appearance:**
+        *   By itself, a `<div>` has no visual appearance. It's purely a structural element for grouping.
+        *   If you add a `<div>` with content inside, you'll see the content, but not the `<div>` itself (unless styled).
+    *   **Styling with CSS:**
+        *   `<div>` elements are typically styled using CSS.
+        *   **Targeting `<div>`s:**
+            *   Styling all `div` elements directly (`div { ... }`) is usually too broad.
+            *   **Using Classes:** It's best practice to assign a `class` attribute to a `<div>` to target it specifically for styling.
+                -------------------code----------------------
+                <div class="product">
+                    <p>Product information...</p>
+                    <a href="#">Learn more</a>
+                </div>
+                -------------------code----------------------
+                -------------------code----------------------
+                /* Targets any element with the class "product" */
+                .product {
+                    background-color: gold;
+                }
+
+                /* More specific: targets only div elements with the class "product" */
+                /* div.product {
+                    background-color: gold;
+                } */
+                /* Using just .product is often more flexible. */
+                -------------------code----------------------
+    *   **Block-Level Element:**
+        *   A `<div>` is a **block-level element**.
+        *   **Characteristics of Block-Level Elements:**
+            1.  They always start on a new line.
+            2.  They take up the full available width of their parent container by default (even if their content is small).
+        *   **Example:** If you have two `<div>` elements, the second one will appear below the first, each occupying the full width.
+            -------------------code----------------------
+            <div class="product" style="background-color: gold;">Content 1</div>
+            <div class="product" style="background-color: lightblue;">Content 2</div>
+            -------------------code----------------------
+        *   **Controlling Width:** The `width` of a block-level element can be set using CSS (e.g., `width: 300px;`).
+    *   **Duplicating Lines (Editor Shortcut):**
+        *   Select lines of code.
+        *   Hold `Shift` + `Alt` (or `Option` on Mac) + `Down Arrow` to duplicate the selected lines.
+
+**III. The `<span>` Element**
+    *   **Definition:** `<span>` is another generic container element, often used for styling smaller pieces of text *within* a larger block of content (like a paragraph).
+    *   **Inline Element:**
+        *   A `<span>` is an **inline element**.
+        *   **Characteristics of Inline Elements:**
+            1.  They do *not* start on a new line.
+            2.  They only take up as much width as their content requires.
+            3.  They flow along with the surrounding text.
+    *   **Use Case: Highlighting Text**
+        *   **Problem with `<div>` for inline styling:** If you wrap a single word in a paragraph with a `<div>` to style it, the `<div>` (being block-level) will force that word onto a new line and take up the full width, disrupting the layout.
+        *   **Solution with `<span>`:** Wrapping the word with a `<span>` allows you to apply styles (e.g., background color) without breaking the flow of the text.
+        -------------------code----------------------
+        <p>
+            This is some <span class="highlight">important</span> text.
+        </p>
+        -------------------code----------------------
+        -------------------code----------------------
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        -------------------code----------------------
+    *   **Multiple Cursors / Multi-Selection (Editor Shortcut):**
+        *   Select an instance of text (e.g., an opening `<div>` tag).
+        *   Press `Ctrl+D` (Windows/Linux) or `Cmd+D` (Mac) to select the next occurrence of that same text. This creates multiple cursors.
+        *   You can then edit all selected instances simultaneously.
+        *   Press `Esc` (usually twice) to disable multi-cursor editing.
+
+**IV. `<div>` vs. `<span>` Summary**
+    *   **`<div>` (Division):**
+        *   **Block-level** container.
+        *   Used for grouping larger sections of content or for layout purposes.
+        *   Starts on a new line and takes full available width by default.
+    *   **`<span>`:**
+        *   **Inline** container.
+        *   Used for grouping smaller, inline pieces of content (often text) for styling, without affecting the overall block flow.
+        *   Stays on the same line and only takes up necessary width.
+
+**V. Next Steps**
+    *   HTML5 introduces more descriptive (semantic) container elements beyond `<div>` and `<span>`. These will be discussed next.
+
+---

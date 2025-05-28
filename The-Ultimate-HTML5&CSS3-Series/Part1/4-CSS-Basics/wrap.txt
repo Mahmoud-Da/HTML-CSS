@@ -649,3 +649,150 @@ a:focus {
 | `:focus`          | Element is focused (e.g., via keyboard)                            |
 
 ---
+
+
+*** 7-_Pseudo-element_Selectors ***
+## **CSS Pseudo Element Selectors**
+
+### **Definition**
+
+Pseudo elements allow you to **style specific parts of an element**, such as the first letter or line of a paragraph, or to **insert generated content** before or after an element.
+
+They are written using **double colons `(::)`**, distinguishing them from **pseudo classes**, which use a single colon `(:)`.
+
+---
+
+## **1. Styling the First Letter**
+
+### Without Pseudo Element:
+
+Using a manual `<span>`:
+
+-------------------code----------------------
+<p><span class="first-letter">L</span>orem ipsum...</p>
+-------------------code----------------------
+
+-------------------code----------------------
+.first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+-------------------code----------------------
+
+### With Pseudo Element:
+
+Using `::first-letter`:
+
+-------------------code----------------------
+p::first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+-------------------code----------------------
+
+* No need for extra markup.
+* Commonly used for decorative styling in books and articles.
+
+---
+
+## **2. Styling the First Line**
+
+-------------------code----------------------
+p::first-line {
+  font-weight: bold;
+}
+-------------------code----------------------
+
+* Applies styles to only the **first rendered line** of text in a block-level element.
+* Note: line length depends on the container width.
+
+---
+
+## **3. Styling Selected Text**
+
+-------------------code----------------------
+p::selection {
+  background-color: pink;
+}
+-------------------code----------------------
+
+* Affects only the selected text in `<p>` elements.
+* To apply globally:
+
+-------------------code----------------------
+::selection {
+  background-color: pink;
+}
+-------------------code----------------------
+
+---
+
+## **4. Inserting Content with `::before`**
+
+### Example:
+
+-------------------code----------------------
+p::before {
+  content: "...";
+}
+-------------------code----------------------
+
+* Inserts content **before** the actual content of the element.
+* Acts like a real element in the DOM (visible in dev tools).
+* Can be styled further:
+
+-------------------code----------------------
+p::before {
+  content: "...";
+  display: block;
+}
+-------------------code----------------------
+
+* `display: block` makes the pseudo element start on a new line, taking full width.
+
+---
+
+## **5. Inserting Content with `::after`**
+
+### Example:
+
+-------------------code----------------------
+p::after {
+  content: "...";
+}
+-------------------code----------------------
+
+* Similar to `::before`, but content appears **after** the element’s content.
+* Useful for adding markers, symbols, or extra text after elements.
+
+---
+
+## **Pseudo Element Summary Table**
+
+| Selector         | Purpose                                          |
+| ---------------- | ------------------------------------------------ |
+| `::first-letter` | Styles the first letter of a block-level element |
+| `::first-line`   | Styles the first line of a block-level element   |
+| `::selection`    | Styles the portion of text selected by the user  |
+| `::before`       | Inserts content before the element’s content     |
+| `::after`        | Inserts content after the element’s content      |
+
+---
+
+## **Differences: Pseudo Classes vs Pseudo Elements**
+
+| Feature      | Pseudo Classes (`:`)              | Pseudo Elements (`::`)                 |
+| ------------ | --------------------------------- | -------------------------------------- |
+| Target       | Whole elements in a certain state | Parts of elements or generated content |
+| Example      | `:hover`, `:first-child`          | `::first-letter`, `::before`           |
+| Colon syntax | Single colon `:`                  | Double colon `::`                      |
+
+---
+
+## **Best Practices**
+
+* Use pseudo elements for layout and decoration without modifying HTML structure.
+* Combine with pseudo classes for dynamic and rich UI styling.
+* Remember that `::before` and `::after` **require the `content` property** to display anything.
+
+---

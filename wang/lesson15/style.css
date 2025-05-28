@@ -1,0 +1,19 @@
+body {
+  font-family: cursive;
+}
+
+section {
+  background-color: yellow;
+}
+
+.blue-color {
+  color: blue;
+}
+
+#red-background {
+  background-color: red;
+}
+
+#gray-color {
+  color: gray;
+}

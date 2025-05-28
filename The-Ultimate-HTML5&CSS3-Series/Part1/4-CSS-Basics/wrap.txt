@@ -203,3 +203,161 @@ By understanding and applying these methods appropriately, you can write clean, 
 * You'll use normalize.css in all future lessons for a standardized starting point.
 
 ---
+
+*** 4-_Basic_Selectors ***
+
+## **CSS Selectors (Basic)**
+
+In CSS, **selectors** are used to target HTML elements for styling. There are several ways to select elements:
+
+---
+
+### **1. Type Selectors**
+
+* Select elements by their tag name.
+* Example:
+
+  -------------------code----------------------
+  body {
+    font-family: Arial;
+  }
+  -------------------code----------------------
+
+---
+
+### **2. ID Selectors**
+
+* Use `#` followed by the element's ID.
+* IDs must be **unique** in an HTML document.
+* Example:
+
+  -------------------code----------------------
+  <section id="products"></section>
+  -------------------code----------------------
+
+  -------------------code----------------------
+  #products {
+    background-color: lightgray;
+  }
+  -------------------code----------------------
+
+---
+
+### **3. Class Selectors**
+
+* Use `.` followed by the class name.
+* Multiple elements can share the same class.
+* Example:
+
+  -------------------code----------------------
+  <article class="product"></article>
+  <article class="product"></article>
+  <article class="product"></article>
+  -------------------code----------------------
+
+  -------------------code----------------------
+  .product {
+    border: 1px solid #ccc;
+  }
+  -------------------code----------------------
+
+---
+
+### **ID vs Class**
+
+| Feature    | ID                   | Class                     |
+| ---------- | -------------------- | ------------------------- |
+| Uniqueness | Must be unique       | Can be reused             |
+| Syntax     | `#idName`            | `.className`              |
+| Use Case   | One specific element | Multiple similar elements |
+
+**Metaphor**: An ID is like a passport number (unique). A class is like a job title (can be shared).
+
+---
+
+### **4. Attribute Selectors**
+
+Select elements based on the presence or value of an attribute.
+
+#### a. **By Existence**
+
+-------------------code----------------------
+a[target] {
+  color: blue;
+}
+-------------------code----------------------
+
+Selects all `<a>` elements with a `target` attribute.
+
+#### b. **By Exact Match**
+
+-------------------code----------------------
+a[target="_blank"] {
+  color: blue;
+}
+-------------------code----------------------
+
+#### c. **By Partial Match**
+
+* **Contains value** (`*=`):
+
+  -------------------code----------------------
+  a[href*="google"] {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  * Matches if `href` contains "google" anywhere in the value.
+
+* **Starts with** (`^=`):
+
+  -------------------code----------------------
+  a[href^="https"] {
+    text-decoration: underline;
+  }
+  -------------------code----------------------
+
+* **Ends with** (`$=`):
+
+  -------------------code----------------------
+  a[href$=".com"] {
+    font-weight: bold;
+  }
+  -------------------code----------------------
+
+#### d. **Multiple Attribute Conditions**
+
+-------------------code----------------------
+a[href^="https"][href$=".com"] {
+  background-color: yellow;
+}
+-------------------code----------------------
+
+Selects elements where `href` starts with `https` and ends with `.com`.
+
+---
+
+### **Caution**
+
+* Attribute selectors are **less common** and often **fragile**.
+
+  * Example: A small change in the URL can break the style.
+
+---
+
+### **Summary**
+
+| Selector Type           | Syntax Example       | Notes                      |
+| ----------------------- | -------------------- | -------------------------- |
+| Type                    | `body`               | Selects all body elements  |
+| ID                      | `#products`          | Unique per page            |
+| Class                   | `.product`           | Reusable for many elements |
+| Attribute (exists)      | `a[target]`          | Checks if attribute exists |
+| Attribute (exact)       | `a[target="_blank"]` | Exact value match          |
+| Attribute (contains)    | `a[href*="google"]`  | Value contains string      |
+| Attribute (starts with) | `a[href^="https"]`   | Begins with value          |
+| Attribute (ends with)   | `a[href$=".com"]`    | Ends with value            |
+
+---
+
+Next topic: **Relational Selectors** (used to select elements based on their relationship in the HTML structure).

@@ -484,3 +484,168 @@ In addition to basic selectors, CSS allows you to select elements based on their
 
 ---
 
+*** 6-_Pseudo-class_Selectors ***
+## **CSS Pseudo Class Selectors**
+
+### **Definition**
+
+Pseudo class selectors target elements based on their **state**, **position**, or **interaction** within the document. They are not real classes you assign manually—they are **automatically applied by the browser**.
+
+All pseudo classes start with a **colon (`:`)**.
+
+---
+
+## **1. Basic Usage Example**
+
+### Without Pseudo Class:
+
+-------------------code----------------------
+<p class="first">First paragraph</p>
+-------------------code----------------------
+
+-------------------code----------------------
+.first {
+  font-size: 140%;
+  font-style: italic;
+}
+-------------------code----------------------
+
+### With Pseudo Class:
+
+-------------------code----------------------
+<article>
+  <p>First paragraph</p>
+</article>
+-------------------code----------------------
+
+-------------------code----------------------
+article :first-child {
+  font-size: 140%;
+  font-style: italic;
+}
+-------------------code----------------------
+
+---
+
+## **2. Key Pseudo Class Selectors**
+
+### **:first-child**
+
+* Targets the **first child** of its parent, regardless of element type.
+* **Fragile**: If another element (e.g., a heading) is placed first, the rule may not apply as intended.
+
+### **:first-of-type**
+
+* Targets the **first element of a specific type** within its parent.
+* More **reliable** than `:first-child` when targeting specific tags like `<p>`.
+
+-------------------code----------------------
+article p:first-of-type {
+  font-style: italic;
+}
+-------------------code----------------------
+
+---
+
+### **:last-child**
+
+* Targets the **last child** of a parent.
+* **Fragile** if another element is added after the target.
+
+### **:last-of-type**
+
+* Targets the **last occurrence of a specific element type** within a parent.
+
+-------------------code----------------------
+article p:last-of-type {
+  font-weight: bold;
+}
+-------------------code----------------------
+
+---
+
+### **:nth-child(n)**
+
+* Targets elements based on their **position**.
+* Accepts values like `odd`, `even`, or formulas like `3n`.
+
+-------------------code----------------------
+ul li:nth-child(odd) {
+  color: deeppink;
+}
+-------------------code----------------------
+
+### **:nth-of-type(n)**
+
+* Similar to `nth-child`, but counts only elements of a specific type.
+
+---
+
+## **3. Pseudo Classes for Hyperlinks**
+
+### **:link**
+
+* Targets **unvisited** links.
+
+### **:visited**
+
+* Targets **visited** links.
+
+-------------------code----------------------
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: dodgerblue;
+}
+-------------------code----------------------
+
+### **:hover**
+
+* Applies when the user **hovers** over an element (e.g., with a mouse).
+* Can be used on any element.
+
+-------------------code----------------------
+a:hover {
+  color: deeppink;
+}
+-------------------code----------------------
+
+### **:focus**
+
+* Applies when the element is **focused** (e.g., via keyboard tabbing).
+* Commonly used with `:hover` for accessibility.
+
+-------------------code----------------------
+a:focus {
+  color: deeppink;
+}
+-------------------code----------------------
+
+---
+
+## **4. Best Practices**
+
+* Prefer `:first-of-type` and `:last-of-type` over `:first-child` and `:last-child` when targeting specific tags.
+* Always pair `:hover` with `:focus` for **keyboard accessibility**.
+* Avoid over-relying on position-based pseudo classes in complex DOM structures—they can become **fragile**.
+
+---
+
+## **Summary Table**
+
+| Pseudo Class      | Description                                                        |
+| ----------------- | ------------------------------------------------------------------ |
+| `:first-child`    | First child of its parent                                          |
+| `:first-of-type`  | First element of a specific type in its parent                     |
+| `:last-child`     | Last child of its parent                                           |
+| `:last-of-type`   | Last element of a specific type in its parent                      |
+| `:nth-child(n)`   | Nth child of its parent (accepts numbers, `odd`, `even`, formulas) |
+| `:nth-of-type(n)` | Nth element of a specific type                                     |
+| `:link`           | Unvisited link                                                     |
+| `:visited`        | Visited link                                                       |
+| `:hover`          | Mouse is hovering over the element                                 |
+| `:focus`          | Element is focused (e.g., via keyboard)                            |
+
+---

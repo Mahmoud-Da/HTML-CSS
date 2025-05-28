@@ -129,3 +129,77 @@ Mastering CSS selectors and styling fundamentals is crucial to becoming a profic
 By understanding and applying these methods appropriately, you can write clean, scalable, and maintainable CSS.
 
 ---
+
+*** 3-_Normalizing_CSS ***
+### **CSS Normalization: Why and How to Use normalize.css**
+
+#### **The Problem**
+
+* Different browsers render some HTML elements in slightly different ways.
+* These inconsistencies can affect layout, spacing, and overall design across browsers.
+
+---
+
+#### **The Solution: `normalize.css`**
+
+* A widely used CSS file that sets consistent default styles across different browsers.
+* Helps avoid cross-browser rendering issues without needing to reset all styles manually.
+
+---
+
+#### **How normalize.css Works**
+
+* It adjusts specific default styles for HTML elements to ensure consistency.
+* **Examples**:
+
+  * Sets `line-height` of the `html` element to `1.15` to standardize text spacing.
+  * Sets `margin` of the `body` element to `0` to remove default spacing.
+
+---
+
+#### **How to Use normalize.css**
+
+1. **Download the File**:
+
+   * Go to [nicolas.github.io/normalize.css](https://nicolas.github.io/normalize.css)
+   * Download the latest version
+   * Alternatively, you can install it using `npm` (recommended for advanced users)
+
+2. **Organize Your Project Structure**:
+
+   * Create a new folder called `css` in the root directory
+   * Move your existing `styles.css` into this folder
+   * Place `normalize.css` in the same `css` folder
+
+3. **Update HTML Links**:
+
+   * In `index.html`, link to both stylesheets in the correct order:
+
+     -------------------code----------------------
+     <link rel="stylesheet" href="css/normalize.css">
+     <link rel="stylesheet" href="css/styles.css">
+     -------------------code----------------------
+
+---
+
+#### **Restoring Intended Styles**
+
+* Since normalize.css removes default spacing (e.g., body margin), you may want to reintroduce custom spacing.
+* Example (in `styles.css`):
+
+  -------------------code----------------------
+  body {
+    margin: 10px;
+  }
+  -------------------code----------------------
+
+---
+
+#### **Key Takeaways**
+
+* **normalize.css** is essential for consistent rendering across browsers.
+* Always link to it **before** your custom stylesheet.
+* It solves many hidden layout issues without the need for excessive debugging.
+* You'll use normalize.css in all future lessons for a standardized starting point.
+
+---

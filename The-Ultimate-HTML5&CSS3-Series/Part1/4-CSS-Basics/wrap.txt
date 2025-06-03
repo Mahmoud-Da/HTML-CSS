@@ -1,0 +1,798 @@
+*** 1-_Introduction ***
+### **Web Development Lecture: Deep Dive into CSS**
+
+#### **Overview**
+
+This section focuses on essential CSS concepts required for building visually appealing and consistent web pages.
+
+---
+
+#### **Topics Covered**
+
+1. **Ways to Provide CSS**
+
+   * Inline CSS
+   * Internal CSS (within `<style>` tags)
+   * External CSS (linked stylesheet)
+
+2. **Normalizing CSS**
+
+   * Purpose: Ensure consistent appearance across different browsers
+   * Tools: Normalize.css or CSS reset techniques
+
+3. **CSS Selectors**
+
+   * **Basic Selectors**: Element, class, ID
+   * **Group Selectors**: Apply styles to multiple elements
+   * **Combinators**: Descendant, child, sibling selectors
+   * **Pseudo-classes and Pseudo-elements**: `:hover`, `:first-child`, `::before`, `::after`
+
+4. **Styling Techniques**
+
+   * **Colors**: Named colors, HEX, RGB, HSL
+   * **Gradients**: Linear and radial gradients
+   * **Borders**: Width, style, color, radius
+   * **Shadows**: Text shadows, box shadows
+
+---
+
+#### **Key Takeaway**
+
+Mastering CSS selectors and styling fundamentals is crucial to becoming a proficient front-end developer. Each concept builds on the previous one, so it’s important to follow along closely.
+
+---
+
+*** 2-_Providing_CSS ***
+### **CSS Styling Methods: Embedded, External, and Inline Styles**
+
+#### **1. Embedded (Internal) Style Sheets**
+
+* **Definition**: Styles are written within the `<style>` element in the HTML document, usually inside the `<head>`.
+* **Example**:
+
+  -------------------code----------------------
+  <style>
+    p {
+      color: orange;
+    }
+  </style>
+  -------------------code----------------------
+* **Limitations**:
+
+  * **Not scalable**: Styles must be copied across multiple HTML pages, making maintenance difficult.
+  * **Violates separation of concerns**: HTML and CSS are mixed together, reducing modularity.
+* **Analogy**: Like a supermarket with everything in one section—disorganized and hard to maintain.
+
+---
+
+#### **2. External Style Sheets**
+
+* **Definition**: Styles are defined in a separate `.css` file and linked to the HTML document.
+* **Benefits**:
+
+  * Promotes **scalability** and **reusability**.
+  * Adheres to the **separation of concerns** principle—HTML handles structure, CSS handles design.
+* **Implementation**:
+
+  * Create a file, e.g., `styles.css`
+  * Move CSS rules into this file
+  * Link it in your HTML:
+
+    -------------------code----------------------
+    <link rel="stylesheet" href="styles.css">
+    -------------------code----------------------
+  * Note: `<link>` is a **self-closing tag** (no need for `</link>`).
+
+---
+
+#### **3. Inline Styles**
+
+* **Definition**: CSS rules are written directly in the HTML element via the `style` attribute.
+* **Example**:
+
+  -------------------code----------------------
+  <p style="color: blue; font-weight: bold;">This is a paragraph.</p>
+  -------------------code----------------------
+* **Drawbacks**:
+
+  * Violates separation of concerns
+  * Reduces code readability and maintainability
+  * Should generally be **avoided**
+
+---
+
+#### **Better Alternative to Inline Styles**
+
+* **Use an `id` attribute** to target specific elements:
+
+  -------------------code----------------------
+  <p id="first">This is a paragraph.</p>
+  -------------------code----------------------
+
+  -------------------code----------------------css
+  #first {
+    color: blue;
+    font-weight: bold;
+  }
+  -------------------code----------------------
+* Keeps style rules within CSS files or embedded style sections
+* Maintains better separation between structure (HTML) and design (CSS)
+
+---
+
+#### **Summary**
+
+* **Embedded Styles**: Quick and easy but not scalable
+* **External Styles**: Best practice for maintainability and modularity
+* **Inline Styles**: Useful in very rare cases; generally discouraged
+
+By understanding and applying these methods appropriately, you can write clean, scalable, and maintainable CSS.
+
+---
+
+*** 3-_Normalizing_CSS ***
+### **CSS Normalization: Why and How to Use normalize.css**
+
+#### **The Problem**
+
+* Different browsers render some HTML elements in slightly different ways.
+* These inconsistencies can affect layout, spacing, and overall design across browsers.
+
+---
+
+#### **The Solution: `normalize.css`**
+
+* A widely used CSS file that sets consistent default styles across different browsers.
+* Helps avoid cross-browser rendering issues without needing to reset all styles manually.
+
+---
+
+#### **How normalize.css Works**
+
+* It adjusts specific default styles for HTML elements to ensure consistency.
+* **Examples**:
+
+  * Sets `line-height` of the `html` element to `1.15` to standardize text spacing.
+  * Sets `margin` of the `body` element to `0` to remove default spacing.
+
+---
+
+#### **How to Use normalize.css**
+
+1. **Download the File**:
+
+   * Go to [nicolas.github.io/normalize.css](https://nicolas.github.io/normalize.css)
+   * Download the latest version
+   * Alternatively, you can install it using `npm` (recommended for advanced users)
+
+2. **Organize Your Project Structure**:
+
+   * Create a new folder called `css` in the root directory
+   * Move your existing `styles.css` into this folder
+   * Place `normalize.css` in the same `css` folder
+
+3. **Update HTML Links**:
+
+   * In `index.html`, link to both stylesheets in the correct order:
+
+     -------------------code----------------------
+     <link rel="stylesheet" href="css/normalize.css">
+     <link rel="stylesheet" href="css/styles.css">
+     -------------------code----------------------
+
+---
+
+#### **Restoring Intended Styles**
+
+* Since normalize.css removes default spacing (e.g., body margin), you may want to reintroduce custom spacing.
+* Example (in `styles.css`):
+
+  -------------------code----------------------
+  body {
+    margin: 10px;
+  }
+  -------------------code----------------------
+
+---
+
+#### **Key Takeaways**
+
+* **normalize.css** is essential for consistent rendering across browsers.
+* Always link to it **before** your custom stylesheet.
+* It solves many hidden layout issues without the need for excessive debugging.
+* You'll use normalize.css in all future lessons for a standardized starting point.
+
+---
+
+*** 4-_Basic_Selectors ***
+
+## **CSS Selectors (Basic)**
+
+In CSS, **selectors** are used to target HTML elements for styling. There are several ways to select elements:
+
+---
+
+### **1. Type Selectors**
+
+* Select elements by their tag name.
+* Example:
+
+  -------------------code----------------------
+  body {
+    font-family: Arial;
+  }
+  -------------------code----------------------
+
+---
+
+### **2. ID Selectors**
+
+* Use `#` followed by the element's ID.
+* IDs must be **unique** in an HTML document.
+* Example:
+
+  -------------------code----------------------
+  <section id="products"></section>
+  -------------------code----------------------
+
+  -------------------code----------------------
+  #products {
+    background-color: lightgray;
+  }
+  -------------------code----------------------
+
+---
+
+### **3. Class Selectors**
+
+* Use `.` followed by the class name.
+* Multiple elements can share the same class.
+* Example:
+
+  -------------------code----------------------
+  <article class="product"></article>
+  <article class="product"></article>
+  <article class="product"></article>
+  -------------------code----------------------
+
+  -------------------code----------------------
+  .product {
+    border: 1px solid #ccc;
+  }
+  -------------------code----------------------
+
+---
+
+### **ID vs Class**
+
+| Feature    | ID                   | Class                     |
+| ---------- | -------------------- | ------------------------- |
+| Uniqueness | Must be unique       | Can be reused             |
+| Syntax     | `#idName`            | `.className`              |
+| Use Case   | One specific element | Multiple similar elements |
+
+**Metaphor**: An ID is like a passport number (unique). A class is like a job title (can be shared).
+
+---
+
+### **4. Attribute Selectors**
+
+Select elements based on the presence or value of an attribute.
+
+#### a. **By Existence**
+
+-------------------code----------------------
+a[target] {
+  color: blue;
+}
+-------------------code----------------------
+
+Selects all `<a>` elements with a `target` attribute.
+
+#### b. **By Exact Match**
+
+-------------------code----------------------
+a[target="_blank"] {
+  color: blue;
+}
+-------------------code----------------------
+
+#### c. **By Partial Match**
+
+* **Contains value** (`*=`):
+
+  -------------------code----------------------
+  a[href*="google"] {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  * Matches if `href` contains "google" anywhere in the value.
+
+* **Starts with** (`^=`):
+
+  -------------------code----------------------
+  a[href^="https"] {
+    text-decoration: underline;
+  }
+  -------------------code----------------------
+
+* **Ends with** (`$=`):
+
+  -------------------code----------------------
+  a[href$=".com"] {
+    font-weight: bold;
+  }
+  -------------------code----------------------
+
+#### d. **Multiple Attribute Conditions**
+
+-------------------code----------------------
+a[href^="https"][href$=".com"] {
+  background-color: yellow;
+}
+-------------------code----------------------
+
+Selects elements where `href` starts with `https` and ends with `.com`.
+
+---
+
+### **Caution**
+
+* Attribute selectors are **less common** and often **fragile**.
+
+  * Example: A small change in the URL can break the style.
+
+---
+
+### **Summary**
+
+| Selector Type           | Syntax Example       | Notes                      |
+| ----------------------- | -------------------- | -------------------------- |
+| Type                    | `body`               | Selects all body elements  |
+| ID                      | `#products`          | Unique per page            |
+| Class                   | `.product`           | Reusable for many elements |
+| Attribute (exists)      | `a[target]`          | Checks if attribute exists |
+| Attribute (exact)       | `a[target="_blank"]` | Exact value match          |
+| Attribute (contains)    | `a[href*="google"]`  | Value contains string      |
+| Attribute (starts with) | `a[href^="https"]`   | Begins with value          |
+| Attribute (ends with)   | `a[href$=".com"]`    | Ends with value            |
+
+---
+
+Next topic: **Relational Selectors** (used to select elements based on their relationship in the HTML structure).
+
+
+*** 5-_Relational_Selectors ***
+
+## **CSS Relational Selectors**
+
+In addition to basic selectors, CSS allows you to select elements based on their **relationship** with other elements in the HTML structure. These are called **relational selectors**.
+
+---
+
+### **1. Descendant Selector**
+
+* **Syntax**: `parent child`
+* Selects **all descendant elements** of a specified parent.
+* Example:
+
+  -------------------code----------------------
+  #products p {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  This will style **all `<p>` elements** inside the `#products` section, regardless of nesting level.
+
+---
+
+### **2. Child Selector**
+
+* **Syntax**: `parent > child`
+* Selects **only the direct children** of a specified parent.
+* Example:
+
+  -------------------code----------------------
+  #products > p {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  Only `<p>` elements that are **direct children** of `#products` will be styled.
+
+---
+
+### **3. Adjacent Sibling Selector**
+
+* **Syntax**: `element + sibling`
+* Selects the **immediately following sibling** element.
+* Example:
+
+  -------------------code----------------------
+  #products + p {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  Styles the first `<p>` element that comes **directly after** the `#products` section.
+
+---
+
+### **4. General Sibling Selector**
+
+* **Syntax**: `element ~ siblings`
+* Selects **all sibling elements** that follow the specified element.
+* Example:
+
+  -------------------code----------------------
+  #products ~ p {
+    color: orange;
+  }
+  -------------------code----------------------
+
+  Styles **all `<p>` elements** that come **after** the `#products` section (not necessarily directly).
+
+---
+
+## **Benefits of Relational Selectors**
+
+* Help create **cleaner markup**.
+* Reduce the need for extra IDs or classes on HTML elements.
+
+---
+
+## **Drawbacks and Considerations**
+
+### **1. Fragility**
+
+* These selectors are **location-dependent**.
+* Changing the position of elements in the DOM can **break styles**.
+
+  * Example: If you move a sibling element above the parent, it will no longer be styled.
+
+### **2. Performance Concerns**
+
+* Slightly **less performant** than basic selectors.
+* Browsers process selectors **right to left**:
+
+  * Example: For `#products ~ p`, the browser first selects **all `<p>` elements**, then checks each one to see if it follows `#products`.
+* The performance difference is usually **negligible**, but it exists.
+
+> **Note**: Avoid premature optimization. Use relational selectors if you're confident the DOM structure will remain stable.
+
+---
+
+## **Summary Table**
+
+| Selector Type    | Syntax  | Description                                  |
+| ---------------- | ------- | -------------------------------------------- |
+| Descendant       | `A B`   | All `B` inside `A`, at any level             |
+| Direct Child     | `A > B` | Only `B` that are **direct** children of `A` |
+| Adjacent Sibling | `A + B` | The **first** `B` that comes **after** `A`   |
+| General Sibling  | `A ~ B` | **All** `B` that come after `A`, same parent |
+
+---
+
+## **Final Notes**
+
+* Use relational selectors to simplify markup when structure is reliable.
+* Prefer **IDs and classes** when:
+
+  * The structure is likely to change
+  * You want to avoid potential fragility or confusion
+
+---
+
+*** 6-_Pseudo-class_Selectors ***
+## **CSS Pseudo Class Selectors**
+
+### **Definition**
+
+Pseudo class selectors target elements based on their **state**, **position**, or **interaction** within the document. They are not real classes you assign manually—they are **automatically applied by the browser**.
+
+All pseudo classes start with a **colon (`:`)**.
+
+---
+
+## **1. Basic Usage Example**
+
+### Without Pseudo Class:
+
+-------------------code----------------------
+<p class="first">First paragraph</p>
+-------------------code----------------------
+
+-------------------code----------------------
+.first {
+  font-size: 140%;
+  font-style: italic;
+}
+-------------------code----------------------
+
+### With Pseudo Class:
+
+-------------------code----------------------
+<article>
+  <p>First paragraph</p>
+</article>
+-------------------code----------------------
+
+-------------------code----------------------
+article :first-child {
+  font-size: 140%;
+  font-style: italic;
+}
+-------------------code----------------------
+
+---
+
+## **2. Key Pseudo Class Selectors**
+
+### **:first-child**
+
+* Targets the **first child** of its parent, regardless of element type.
+* **Fragile**: If another element (e.g., a heading) is placed first, the rule may not apply as intended.
+
+### **:first-of-type**
+
+* Targets the **first element of a specific type** within its parent.
+* More **reliable** than `:first-child` when targeting specific tags like `<p>`.
+
+-------------------code----------------------
+article p:first-of-type {
+  font-style: italic;
+}
+-------------------code----------------------
+
+---
+
+### **:last-child**
+
+* Targets the **last child** of a parent.
+* **Fragile** if another element is added after the target.
+
+### **:last-of-type**
+
+* Targets the **last occurrence of a specific element type** within a parent.
+
+-------------------code----------------------
+article p:last-of-type {
+  font-weight: bold;
+}
+-------------------code----------------------
+
+---
+
+### **:nth-child(n)**
+
+* Targets elements based on their **position**.
+* Accepts values like `odd`, `even`, or formulas like `3n`.
+
+-------------------code----------------------
+ul li:nth-child(odd) {
+  color: deeppink;
+}
+-------------------code----------------------
+
+### **:nth-of-type(n)**
+
+* Similar to `nth-child`, but counts only elements of a specific type.
+
+---
+
+## **3. Pseudo Classes for Hyperlinks**
+
+### **:link**
+
+* Targets **unvisited** links.
+
+### **:visited**
+
+* Targets **visited** links.
+
+-------------------code----------------------
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: dodgerblue;
+}
+-------------------code----------------------
+
+### **:hover**
+
+* Applies when the user **hovers** over an element (e.g., with a mouse).
+* Can be used on any element.
+
+-------------------code----------------------
+a:hover {
+  color: deeppink;
+}
+-------------------code----------------------
+
+### **:focus**
+
+* Applies when the element is **focused** (e.g., via keyboard tabbing).
+* Commonly used with `:hover` for accessibility.
+
+-------------------code----------------------
+a:focus {
+  color: deeppink;
+}
+-------------------code----------------------
+
+---
+
+## **4. Best Practices**
+
+* Prefer `:first-of-type` and `:last-of-type` over `:first-child` and `:last-child` when targeting specific tags.
+* Always pair `:hover` with `:focus` for **keyboard accessibility**.
+* Avoid over-relying on position-based pseudo classes in complex DOM structures—they can become **fragile**.
+
+---
+
+## **Summary Table**
+
+| Pseudo Class      | Description                                                        |
+| ----------------- | ------------------------------------------------------------------ |
+| `:first-child`    | First child of its parent                                          |
+| `:first-of-type`  | First element of a specific type in its parent                     |
+| `:last-child`     | Last child of its parent                                           |
+| `:last-of-type`   | Last element of a specific type in its parent                      |
+| `:nth-child(n)`   | Nth child of its parent (accepts numbers, `odd`, `even`, formulas) |
+| `:nth-of-type(n)` | Nth element of a specific type                                     |
+| `:link`           | Unvisited link                                                     |
+| `:visited`        | Visited link                                                       |
+| `:hover`          | Mouse is hovering over the element                                 |
+| `:focus`          | Element is focused (e.g., via keyboard)                            |
+
+---
+
+
+*** 7-_Pseudo-element_Selectors ***
+## **CSS Pseudo Element Selectors**
+
+### **Definition**
+
+Pseudo elements allow you to **style specific parts of an element**, such as the first letter or line of a paragraph, or to **insert generated content** before or after an element.
+
+They are written using **double colons `(::)`**, distinguishing them from **pseudo classes**, which use a single colon `(:)`.
+
+---
+
+## **1. Styling the First Letter**
+
+### Without Pseudo Element:
+
+Using a manual `<span>`:
+
+-------------------code----------------------
+<p><span class="first-letter">L</span>orem ipsum...</p>
+-------------------code----------------------
+
+-------------------code----------------------
+.first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+-------------------code----------------------
+
+### With Pseudo Element:
+
+Using `::first-letter`:
+
+-------------------code----------------------
+p::first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+-------------------code----------------------
+
+* No need for extra markup.
+* Commonly used for decorative styling in books and articles.
+
+---
+
+## **2. Styling the First Line**
+
+-------------------code----------------------
+p::first-line {
+  font-weight: bold;
+}
+-------------------code----------------------
+
+* Applies styles to only the **first rendered line** of text in a block-level element.
+* Note: line length depends on the container width.
+
+---
+
+## **3. Styling Selected Text**
+
+-------------------code----------------------
+p::selection {
+  background-color: pink;
+}
+-------------------code----------------------
+
+* Affects only the selected text in `<p>` elements.
+* To apply globally:
+
+-------------------code----------------------
+::selection {
+  background-color: pink;
+}
+-------------------code----------------------
+
+---
+
+## **4. Inserting Content with `::before`**
+
+### Example:
+
+-------------------code----------------------
+p::before {
+  content: "...";
+}
+-------------------code----------------------
+
+* Inserts content **before** the actual content of the element.
+* Acts like a real element in the DOM (visible in dev tools).
+* Can be styled further:
+
+-------------------code----------------------
+p::before {
+  content: "...";
+  display: block;
+}
+-------------------code----------------------
+
+* `display: block` makes the pseudo element start on a new line, taking full width.
+
+---
+
+## **5. Inserting Content with `::after`**
+
+### Example:
+
+-------------------code----------------------
+p::after {
+  content: "...";
+}
+-------------------code----------------------
+
+* Similar to `::before`, but content appears **after** the element’s content.
+* Useful for adding markers, symbols, or extra text after elements.
+
+---
+
+## **Pseudo Element Summary Table**
+
+| Selector         | Purpose                                          |
+| ---------------- | ------------------------------------------------ |
+| `::first-letter` | Styles the first letter of a block-level element |
+| `::first-line`   | Styles the first line of a block-level element   |
+| `::selection`    | Styles the portion of text selected by the user  |
+| `::before`       | Inserts content before the element’s content     |
+| `::after`        | Inserts content after the element’s content      |
+
+---
+
+## **Differences: Pseudo Classes vs Pseudo Elements**
+
+| Feature      | Pseudo Classes (`:`)              | Pseudo Elements (`::`)                 |
+| ------------ | --------------------------------- | -------------------------------------- |
+| Target       | Whole elements in a certain state | Parts of elements or generated content |
+| Example      | `:hover`, `:first-child`          | `::first-letter`, `::before`           |
+| Colon syntax | Single colon `:`                  | Double colon `::`                      |
+
+---
+
+## **Best Practices**
+
+* Use pseudo elements for layout and decoration without modifying HTML structure.
+* Combine with pseudo classes for dynamic and rich UI styling.
+* Remember that `::before` and `::after` **require the `content` property** to display anything.
+
+---
